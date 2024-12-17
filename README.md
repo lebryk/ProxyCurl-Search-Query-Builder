@@ -25,7 +25,7 @@ A modern, intuitive query builder interface built with Next.js 15, React 19, and
 1. Clone the repository:
    ```bash
    git clone https://github.com/lebryk/ProxyCurl-Search-Query-Builder.git
-   cd qurybuilder
+   cd querybuilder
    ```
 
 2. Install dependencies:
