@@ -1,6 +1,6 @@
 # Query Builder
 
-A modern, intuitive query builder interface built with Next.js 15, React 19, and Tailwind CSS. This application provides a user-friendly interface for constructing complex database queries without writing SQL code.
+A modern, intuitive query builder interface built with Next.js 15, React 19, and Tailwind CSS. This application provides a user-friendly interface for constructing complex Boolean queries for ProxyCurl Person Search API.
 
 ## Features
 
@@ -25,7 +25,7 @@ A modern, intuitive query builder interface built with Next.js 15, React 19, and
 1. Clone the repository:
    ```bash
    git clone https://github.com/lebryk/ProxyCurl-Search-Query-Builder.git
-   cd querybuilder
+   cd ProxyCurl-Search-Query-Builder
    ```
 
 2. Install dependencies:
