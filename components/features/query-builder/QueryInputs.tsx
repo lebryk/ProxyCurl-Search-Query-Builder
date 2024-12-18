@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { PeopleSearchQueryParams } from '@/types/searchTypes'
@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { FilterIcon } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface QueryInputsProps {
   selectedFields: (keyof PeopleSearchQueryParams)[]
@@ -21,6 +22,12 @@ interface QueryInputsProps {
 
 export default function QueryInputs({ selectedFields, query, updateQuery, onOpenBooleanBuilder }: QueryInputsProps) {
   const [validationErrors, setValidationErrors] = useState<Partial<Record<keyof PeopleSearchQueryParams, string>>>({})
+  const [mounted, setMounted] = useState(false)
+
+  // Set mounted to true after initial render for animation
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const getFieldInfo = (fieldName: keyof PeopleSearchQueryParams) => {
     const field = queryFields.find(f => f.name === fieldName)
@@ -241,43 +248,53 @@ const validateField = (field: keyof PeopleSearchQueryParams, value: string) => {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {Object.entries(groupedFields).map(([group, fields]) => (
-          <Card key={group} className="overflow-hidden">
-            <CardHeader className="bg-muted py-2">
-              <CardTitle className="text-sm font-medium">{group}</CardTitle>
-            </CardHeader>
-            <CardContent className="p-4">
-              <div className="space-y-4">
-                {fields.map((field) => (
-                  <div key={field} className="space-y-2">
-                    <div className="flex items-center space-x-1">
-                      <Label htmlFor={field} className="text-sm font-medium text-gray-700">
-                        {getFieldInfo(field).label}
-                      </Label>
-                      <Popover>
-                        <PopoverTrigger>
-                          <QuestionMarkCircledIcon className="h-4 w-4 text-gray-400" />
-                        </PopoverTrigger>
-                        <PopoverContent className="w-80 p-2 text-sm">
-                          {getFieldInfo(field).description}
-                          <div className="mt-2">
-                            <span className="inline-block bg-gray-100 rounded px-2 py-1 text-sm">Example: &apos;{getFieldInfo(field).example}&apos;</span>
-                          </div>
-                          {getFieldInfo(field).validation_rules && (
-                            <div className="mt-2">
-                              <span className="text-xs text-gray-500">Validation: {getFieldInfo(field).validation_rules}</span>
-                            </div>
-                          )}
-                        </PopoverContent>
-                      </Popover>
-                    </div>
-                    {renderInput(field)}
+        <AnimatePresence>
+          {Object.entries(groupedFields).map(([group, fields]) => (
+            <motion.div
+              key={group}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Card>
+                <CardHeader className="bg-muted py-2">
+                  <CardTitle className="text-sm font-medium">{group}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <div className="space-y-4">
+                    {fields.map((field) => (
+                      <div key={field} className="space-y-2">
+                        <div className="flex items-center space-x-1">
+                          <Label htmlFor={field} className="text-sm font-medium text-gray-700">
+                            {getFieldInfo(field).label}
+                          </Label>
+                          <Popover>
+                            <PopoverTrigger>
+                              <QuestionMarkCircledIcon className="h-4 w-4 text-gray-400" />
+                            </PopoverTrigger>
+                            <PopoverContent className="w-80 p-2 text-sm">
+                              {getFieldInfo(field).description}
+                              <div className="mt-2">
+                                <span className="inline-block bg-gray-100 rounded px-2 py-1 text-sm">Example: &apos;{getFieldInfo(field).example}&apos;</span>
+                              </div>
+                              {getFieldInfo(field).validation_rules && (
+                                <div className="mt-2">
+                                  <span className="text-xs text-gray-500">Validation: {getFieldInfo(field).validation_rules}</span>
+                                </div>
+                              )}
+                            </PopoverContent>
+                          </Popover>
+                        </div>
+                        {renderInput(field)}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   )

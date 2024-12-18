@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from "next/font/google"
 import '../styles/globals.css'
+import { CopilotKit } from "@copilotkit/react-core"; 
+import { CopilotSidebar } from "@copilotkit/react-ui"; 
+import "@copilotkit/react-ui/styles.css"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +28,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}>
-        {children}
+        <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/aaa" transcribeAudioUrl="/aaa"> 
+          <CopilotSidebar
+            defaultOpen={true}
+            clickOutsideToClose={false}
+            labels={{
+              title: "Query Builder",
+              initial: "Hi! 👋 I'm here to help you create Search Queries",
+            }}
+          >
+            {children}
+          </CopilotSidebar>
+        </CopilotKit>
       </body>
     </html>
   )

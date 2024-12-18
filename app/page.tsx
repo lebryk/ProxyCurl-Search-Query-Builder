@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
@@ -13,6 +13,8 @@ import QueryModal from '@/components/features/query-builder/QueryModal'
 import QueryInputs from '@/components/features/query-builder/QueryInputs'
 import { useToast } from "@/hooks/use-toast"
 import { Toaster } from "@/components/ui/toaster"
+import { useCoAgent } from "@copilotkit/react-core"; 
+import { AgentState } from '../types/agentState';
 
 export default function SearchQueryBuilderPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -53,16 +55,60 @@ export default function SearchQueryBuilderPage() {
 
   const handleJsonParse = () => {
     try {
-      const parsedQuery = JSON.parse(jsonInput)
-      const newSelectedFields = Object.keys(parsedQuery) as (keyof PeopleSearchQueryParams)[]
-      setSelectedFields(newSelectedFields)
-      setQuery(parsedQuery)
-      setJsonError(null)
+      // Validate input before parsing
+      if (!jsonInput || typeof jsonInput !== 'string' || jsonInput.trim() === '') {
+        console.warn('Invalid JSON input: empty or not a string');
+        setJsonError('Invalid JSON input: empty or not a string');
+        return;
+      }
+
+      // Try to validate JSON structure before parsing
+      if (!jsonInput.startsWith('{') || !jsonInput.endsWith('}')) {
+        console.warn('Invalid JSON input: not an object');
+        setJsonError('Invalid JSON input: must be a valid JSON object');
+        return;
+      }
+
+      const parsedQuery = JSON.parse(jsonInput);
+      
+      // Validate parsed result is an object
+      if (!parsedQuery || typeof parsedQuery !== 'object') {
+        console.warn('Invalid JSON input: parsed result is not an object');
+        setJsonError('Invalid JSON input: must be a valid JSON object');
+        return;
+      }
+
+      const newSelectedFields = Object.keys(parsedQuery) as (keyof PeopleSearchQueryParams)[];
+      setSelectedFields(newSelectedFields);
+      setQuery(parsedQuery);
+      setJsonError(null); // Clear any previous errors on success
     } catch (error) {
-      setJsonError('Invalid JSON input. Please check your query and try again.')
-      console.error('Error parsing JSON:', error)
+      console.error('Error parsing JSON:', error);
+      setJsonError('Invalid JSON input. Please check your query and try again.');
     }
-  }
+  };
+
+  const { state, setState } = useCoAgent<AgentState>({
+    name: "research_canvas",
+    initialState: {
+    },
+  });
+
+  useEffect(() => {
+    console.log('CoAgent State Update:', state);
+    if (state.optimized_query && typeof state.optimized_query === 'object') {
+      const jsonString = JSON.stringify(state.optimized_query, null, 2);
+      setJsonInput(jsonString);
+      
+      // Use setTimeout to ensure state is updated before parsing
+      setTimeout(() => {
+        // Additional check to ensure we have valid JSON string
+        if (jsonString && jsonString.length > 5 && jsonString.trim() !== '') {
+          handleJsonParse();
+        }
+      }, 0);
+    }
+  }, [state.optimized_query]);
 
   return (
     <div className="container mx-auto p-4 space-y-8">
