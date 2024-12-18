@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}>
-        <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/aaa" transcribeAudioUrl="/aaa"> 
+        <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/api/tts" transcribeAudioUrl="/api/transcribe"> 
           <CopilotSidebar
             defaultOpen={true}
             clickOutsideToClose={false}
