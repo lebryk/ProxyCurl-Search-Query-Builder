@@ -4,6 +4,8 @@ import '../styles/globals.css'
 import { CopilotKit } from "@copilotkit/react-core"; 
 import { CopilotSidebar } from "@copilotkit/react-ui"; 
 import "@copilotkit/react-ui/styles.css"; 
+import Providers from './providers'
+import { AppSidebar } from "@/components/features/AppSidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,19 +29,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}>
-        <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/api/tts" transcribeAudioUrl="/api/transcribe"> 
-          <CopilotSidebar
-            defaultOpen={true}
-            clickOutsideToClose={false}
-            labels={{
-              title: "Query Builder",
-              initial: "Hi! 👋 I'm here to help you create Search Queries",
-            }}
-          >
-            {children}
-          </CopilotSidebar>
-        </CopilotKit>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased w-max`}>
+        <Providers>
+          <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/api/tts" transcribeAudioUrl="/api/transcribe"> 
+            <div className="flex h-screen overflow-hidden w-max">
+              <AppSidebar />
+              <main className="flex-1 overflow-y-auto w-max">
+                {children}
+              </main>
+            </div>
+          </CopilotKit>
+        </Providers>
       </body>
     </html>
   )

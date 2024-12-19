@@ -12,4 +12,8 @@ export interface AgentState extends MessagesState {
     requirements_complete?: boolean;
     collected_requirements?: string[];
     optimized_query?: OptimizedQuery;
+    logs?: {
+        message: string;
+        done: boolean;
+    }[];
 }

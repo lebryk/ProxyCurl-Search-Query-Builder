@@ -1,0 +1,10 @@
+:root {
+  --header-height: 3.5rem; /* 56px - height of the new chat button section */
+  --accordion-triggers: 8rem; /* 128px - approximate height of accordion triggers */
+}
+
+/* Ensure accordion content expands properly */
+.chat-section {
+  height: calc(100vh - var(--header-height) - var(--accordion-triggers));
+  transition: none;
+}

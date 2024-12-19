@@ -20,26 +20,24 @@ interface QueryTermProps {
 
 export const QueryTerm: React.FC<QueryTermProps> = ({ value, exact, onChange }) => {
   return (
-    <div className="relative flex-grow">
+    <div className="relative flex items-center gap-2 flex-grow">
       <Input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value, exact)}
         placeholder="Enter search term"
-        className="w-full bg-gray-50 border-gray-200 rounded-xl pr-24"
+        className="flex-1 bg-gray-50 border-gray-200 rounded-xl"
       />
-      <div className="absolute right-3 top-1/2 -translate-y-1/2">
-        <Button
-          variant={exact ? "default" : "outline"}
-          size="sm"
-          className={`h-8 ${exact ? 
-            "bg-emerald-500 hover:bg-emerald-600 text-white" : 
-            "bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100"}`}
-          onClick={() => onChange(value, !exact)}
-        >
-          Exact
-        </Button>
-      </div>
+      <Button
+        variant={exact ? "default" : "outline"}
+        size="sm"
+        className={`h-8 shrink-0 ${exact ? 
+          "bg-emerald-500 hover:bg-emerald-600 text-white" : 
+          "bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100"}`}
+        onClick={() => onChange(value, !exact)}
+      >
+        Exact
+      </Button>
     </div>
   )
 }
@@ -101,21 +99,13 @@ export const QueryGroup: React.FC<QueryGroupProps> = ({ items, onChange }) => {
             </Button>
           </div>
         ))}
-        <div className="flex space-x-2">
-          <Button 
-            onClick={addTerm} 
-            size="sm"
-            className="bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100"
-          >
-            <PlusCircleIcon className="mr-2 h-4 w-4" />
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" onClick={addTerm} className="flex items-center gap-1">
+            <PlusCircleIcon className="h-4 w-4" />
             Add Term
           </Button>
-          <Button 
-            onClick={addGroup} 
-            size="sm"
-            className="bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100"
-          >
-            <PlusCircleIcon className="mr-2 h-4 w-4" />
+          <Button variant="outline" size="sm" onClick={addGroup} className="flex items-center gap-1">
+            <PlusCircleIcon className="h-4 w-4" />
             Add Group
           </Button>
         </div>

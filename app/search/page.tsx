@@ -13,8 +13,11 @@ import QueryModal from '@/components/features/query-builder/QueryModal'
 import QueryInputs from '@/components/features/query-builder/QueryInputs'
 import { useToast } from "@/hooks/use-toast"
 import { Toaster } from "@/components/ui/toaster"
-import { useCoAgent } from "@copilotkit/react-core"; 
-import { AgentState } from '../types/agentState';
+import { useCoAgent, useCoAgentStateRender } from "@copilotkit/react-core";
+import { AgentState } from '../../types/agentState';
+import { Progress } from '@/components/features/query-builder/Progress'
+import { useCopilotChatSuggestions } from "@copilotkit/react-ui";
+import { CopilotSidebar } from "@copilotkit/react-ui"; 
 
 export default function SearchQueryBuilderPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -110,8 +113,31 @@ export default function SearchQueryBuilderPage() {
     }
   }, [state.optimized_query]);
 
+  useCoAgentStateRender<AgentState>({
+    name: "research_canvas",
+    render: ({ state }) => {
+      if (state.logs) {
+        return <Progress logs={state.logs} />
+      }
+      return null;
+    },
+  });
+
+  //useCopilotChatSuggestions({
+  //  instructions: "Suggest the most relevant next actions. In context of the current task. You are Agent that helps users find candidates. SO at the beginnig you should suggest Some job postions to search",
+  //});
+
   return (
-    <div className="container mx-auto p-4 space-y-8">
+    <CopilotSidebar
+    defaultOpen={true}
+    clickOutsideToClose={false}
+    labels={{
+      title: "Query Builder",
+      initial: "Hi! 👋 I'm here to help you create Search Queries",
+    }}
+  >
+    <div className="p-6 w-full">
+    <div className="w-full p-4 space-y-8">
       <h1 className="text-3xl font-bold mb-4">Advanced Search Query Builder</h1>
       <Card className="w-full bg-white rounded-2xl shadow-lg">
         <CardHeader className="space-y-1 flex flex-row items-center justify-between">
@@ -240,5 +266,7 @@ export default function SearchQueryBuilderPage() {
       />
       <Toaster />
     </div>
+    </div>
+    </CopilotSidebar>
   )
 }
