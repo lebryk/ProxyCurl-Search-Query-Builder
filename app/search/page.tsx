@@ -16,9 +16,10 @@ import { Toaster } from "@/components/ui/toaster"
 import { useCoAgent, useCoAgentStateRender } from "@copilotkit/react-core";
 import { AgentState } from '../../types/agentState';
 import { Progress } from '@/components/features/query-builder/Progress'
-import { useCopilotChatSuggestions } from "@copilotkit/react-ui";
-import { CopilotSidebar } from "@copilotkit/react-ui"; 
 import { ChatContext } from '../providers'
+import { SearchService } from '@/services/search/searchService'
+import { useAuth } from '@/hooks/useAuth'
+import { useProject } from "@/contexts/ProjectContext"
 
 export default function SearchQueryBuilderPage() {
   const [selectedFields, setSelectedFields] = useState<(keyof PeopleSearchQueryParams)[]>([])
@@ -28,6 +29,10 @@ export default function SearchQueryBuilderPage() {
   const [jsonInput, setJsonInput] = useState('')
   const [jsonError, setJsonError] = useState<string | null>(null)
   const { toast } = useToast()
+  const { user } = useAuth()
+  const { activeProject } = useProject()
+  const [isLoading, setIsLoading] = useState(false)
+  const [searchResults, setSearchResults] = useState<string[]>([])
 
   const addFields = (fields: (keyof PeopleSearchQueryParams)[]) => {
     setSelectedFields([...new Set([...selectedFields, ...fields])])
@@ -38,9 +43,58 @@ export default function SearchQueryBuilderPage() {
     setQuery({ ...query, [field]: value })
   }
 
-  const handleSearch = () => {
-    console.log("Performing search with query:", query)
-    // Here you would typically call your search function or API
+  const handleSearch = async () => {
+    if (!user) {
+      toast({
+        title: "Error",
+        description: "You must be logged in to perform a search",
+        variant: "destructive"
+      })
+      return
+    }
+
+    if (!activeProject) {
+      toast({
+        title: "Error",
+        description: "Please select a project before searching",
+        variant: "destructive"
+      })
+      return
+    }
+
+    try {
+      setIsLoading(true)
+      const searchService = new SearchService(
+        user.id, 
+        activeProject.id
+      )
+      
+      const searchParams = {
+        query: JSON.stringify(query),
+        filters: {
+          selectedFields
+        }
+      }
+
+      const results = await searchService.search(searchParams)
+      
+      setSearchResults(results.candidateIds)
+      
+      toast({
+        title: results.fromCache ? "Results from cache" : "Search completed",
+        description: `Found ${results.candidateIds.length} results`,
+        variant: "default"
+      })
+    } catch (error) {
+      console.error("Search error:", error)
+      toast({
+        title: "Search failed",
+        description: error instanceof Error ? error.message : "An unknown error occurred",
+        variant: "destructive"
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const openBooleanBuilder = (field: keyof PeopleSearchQueryParams) => {
@@ -92,7 +146,7 @@ export default function SearchQueryBuilderPage() {
     }
   };
 
-  const { isChatOpen } = useContext(ChatContext);
+  const { isChatOpen } = useContext(ChatContext ?? true);
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -191,8 +245,9 @@ export default function SearchQueryBuilderPage() {
               <Button 
                 onClick={handleSearch}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                disabled={isLoading}
               >
-                Search
+                {isLoading ? 'Searching...' : 'Search'}
               </Button>
             </CardFooter>
           </Card>
