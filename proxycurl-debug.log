@@ -1,0 +1,1317 @@
+2024-12-20T20:19:53.042Z - API route called
+2024-12-20T20:19:53.043Z - Request params: current_company_industries=healthcare34555643&education_field_of_study=%28MD+AND+%28Harvard+Medical+School+OR+Johns+Hopkins+University+School+of+Medicine+OR+Stanford+University+School+of+Medicine%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+management+experience+AND+5%2B+years%29&current_company_employee_count_min=1000&current_company_funding_amount_min=20000000&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English&industries=healthcare&page_size=1&enrich_profiles=skip
+2024-12-20T20:19:53.043Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?current_company_industries=healthcare34555643&education_field_of_study=%28MD+AND+%28Harvard+Medical+School+OR+Johns+Hopkins+University+School+of+Medicine+OR+Stanford+University+School+of+Medicine%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+management+experience+AND+5%2B+years%29&current_company_employee_count_min=1000&current_company_funding_amount_min=20000000&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English&industries=healthcare&page_size=1&enrich_profiles=skip
+2024-12-20T20:19:53.043Z - Making request to Proxycurl
+2024-12-20T20:19:54.105Z - Response status: 200
+2024-12-20T20:19:54.105Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f525470df91ecbf-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:19:54 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=o2cvli8XSu7ISfA5tbbIB%2FWcgDDULfwx9gjNohzNAdvuNEb5b42Ldzpi%2B85AqojPet0UPm7uPpNtG8baF%2Bw1%2BQzzmS2pzADObZ0Xa6fGO1a%2BRYvF2XujOQVGnuw%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13081&min_rtt=13038&rtt_var=4976&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=1306&delivery_rate=216329&cwnd=249&unsent_bytes=0&cid=792aed04c3c7df66&ts=994&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "573",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T20:19:54.106Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T20:19:54.106Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T20:19:54.106Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:20:41.764Z - API route called
+2024-12-20T20:20:41.765Z - Request params: country=PL&page_size=1&enrich_profiles=skip
+2024-12-20T20:20:41.765Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?country=PL&page_size=1&enrich_profiles=skip
+2024-12-20T20:20:41.765Z - Making request to Proxycurl
+2024-12-20T20:20:43.025Z - Response status: 200
+2024-12-20T20:20:43.026Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5255a15f4e028d-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:20:43 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=JLaMl%2FSzJTF4AGFVVEsKnF%2BhaJxNGNTEazqo%2BNO0l%2FAJfrZ6URJ7Mrk7ZdPJaLwCqVXUWcmy6vgU0ngzdHlYgwWzqUiaBl6d5EGsVaZUSY%2FJ%2BF6%2B1dp%2F9QTBW6k%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12075&min_rtt=12012&rtt_var=4631&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=801&delivery_rate=231291&cwnd=250&unsent_bytes=0&cid=e14e134a9c8ab3f1&ts=1228&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "1011",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:20:43.028Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/krzysztof-majewski-566633124", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=PL&page_size=1&enrich_profiles=skip&next_token=3YqyebO97BmMTtKyTkPXybAVs1ccXfCNvVEJIbCSUcRhXodlbq5hffQdfcxadhef89X5l1KEn3Ow0KDHoa9GFgJmniOz7FpT5Fzs5fRzquXPCsVW4RPx8qbRfKupbrB4iNObunEB8tnkbMmbJxUcsx3bw4A56SyiwdC8kG2j1dlbhVycrnBV19", "total_result_count": 10000}
+2024-12-20T20:20:43.029Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/krzysztof-majewski-566633124",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=PL&page_size=1&enrich_profiles=skip&next_token=3YqyebO97BmMTtKyTkPXybAVs1ccXfCNvVEJIbCSUcRhXodlbq5hffQdfcxadhef89X5l1KEn3Ow0KDHoa9GFgJmniOz7FpT5Fzs5fRzquXPCsVW4RPx8qbRfKupbrB4iNObunEB8tnkbMmbJxUcsx3bw4A56SyiwdC8kG2j1dlbhVycrnBV19",
+  "total_result_count": 10000
+}
+2024-12-20T20:20:43.029Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:22:02.151Z - API route called
+2024-12-20T20:22:02.152Z - Request params: city=Warsaw&page_size=1&enrich_profiles=skip
+2024-12-20T20:22:02.152Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?city=Warsaw&page_size=1&enrich_profiles=skip
+2024-12-20T20:22:02.152Z - Making request to Proxycurl
+2024-12-20T20:22:03.701Z - Response status: 200
+2024-12-20T20:22:03.703Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f525797c933ecc7-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:22:03 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=mE7fwA0QogFrTRh1udy9KYkvk7xGCDOJm2PbZfCjnIiO1bvIGX8u4MBu4vBOoqPMYexqZ1AO7%2Btts%2F9NH630UnFvSvS0%2FBiUMSJlhuFfJwhYZfwtzU6y4k9FdKA%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13802&min_rtt=12640&rtt_var=5570&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=802&delivery_rate=229113&cwnd=241&unsent_bytes=0&cid=5f914632e5f92a2a&ts=1514&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "1103",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:22:03.706Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/krzysztof-majewski-566633124", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?page_size=1&enrich_profiles=skip&next_token=EhukRfkKbqQxFujwvA6dXKFklb593YwN0zwXEc8IOnSZu7pDgft1gpWYTqh1UgQdlZTR7D2LTlTZcA03wsUjPt7oDC9xxITf5SD4ym96i58QP7EycnzpiQhqJTfo0dyI16MhKVxqqUVnycu8n9yCs6Uqw4pTvJEo7HXbZIKZorK3lhqZ3bW8n1o", "total_result_count": 10000}
+2024-12-20T20:22:03.707Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/krzysztof-majewski-566633124",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?page_size=1&enrich_profiles=skip&next_token=EhukRfkKbqQxFujwvA6dXKFklb593YwN0zwXEc8IOnSZu7pDgft1gpWYTqh1UgQdlZTR7D2LTlTZcA03wsUjPt7oDC9xxITf5SD4ym96i58QP7EycnzpiQhqJTfo0dyI16MhKVxqqUVnycu8n9yCs6Uqw4pTvJEo7HXbZIKZorK3lhqZ3bW8n1o",
+  "total_result_count": 10000
+}
+2024-12-20T20:22:03.707Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:25:43.138Z - API route called
+2024-12-20T20:25:43.139Z - Request params: city=Krak%C3%B3w&page_size=1&enrich_profiles=skip
+2024-12-20T20:25:43.139Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?city=Krak%C3%B3w&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:25:43.139Z - Making request to Proxycurl
+2024-12-20T20:25:44.035Z - Response status: 200
+2024-12-20T20:25:44.036Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f525cfd7c94b239-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:25:43 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lv%2BNqZkqwfQEGEuicCVm396TuB6%2BMyUzh%2F0hOQMLwJPXJ%2BNmV4Ug%2F0zJt4qhiJ7jKgTFqYCgjn7Mj%2FpGn6vaD8GPWwfifleof%2Fw%2F7N1BVG6OwjS5S7PwRYNJDYk%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13883&min_rtt=12987&rtt_var=5510&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=828&delivery_rate=222992&cwnd=217&unsent_bytes=0&cid=babec69186a8e46b&ts=740&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "293",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:25:44.037Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/artur-chamerski-02b03650", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=EOsGAcqw6Ko2fFzAOwhZL42Px3eZVVlo7ciAAgYDgzdRfeQxSosiCwGR6uE6z2dLvENvnjUssOn7d9jl9EuLosehXsGj6dV53gnBQEBFHhN8JKWAqCFAda7aEjPbiExbZzTzA9Nz50YCfWdYaGblaq9qfXVuHTu4bHXpfOBkoM0dPDAKiBysqdUWxaEKBh3Hw2gtJG1vQA3GRxGYppVOUKgatR26B599rs", "total_result_count": 10000}
+2024-12-20T20:25:44.037Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/artur-chamerski-02b03650",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=EOsGAcqw6Ko2fFzAOwhZL42Px3eZVVlo7ciAAgYDgzdRfeQxSosiCwGR6uE6z2dLvENvnjUssOn7d9jl9EuLosehXsGj6dV53gnBQEBFHhN8JKWAqCFAda7aEjPbiExbZzTzA9Nz50YCfWdYaGblaq9qfXVuHTu4bHXpfOBkoM0dPDAKiBysqdUWxaEKBh3Hw2gtJG1vQA3GRxGYppVOUKgatR26B599rs",
+  "total_result_count": 10000
+}
+2024-12-20T20:25:44.038Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:27:58.344Z - API route called
+2024-12-20T20:27:58.345Z - Request params: city=Warszawa&country=pl&page_size=1&enrich_profiles=skip
+2024-12-20T20:27:58.345Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?city=Warszawa&country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:27:58.345Z - Making request to Proxycurl
+2024-12-20T20:27:59.354Z - Response status: 200
+2024-12-20T20:27:59.354Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f526049fa3ceecf-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:27:59 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=VNVPUeigEEf0f%2FzW3bghnzA5twfg%2BrqOgsJdqjxMPypCg0FeQj%2FA5e8aYWO1D2Eg5tqb2BWlLxcFi2FXurmnUBZGW%2F7vY98NBaqfxLkSrbv7dqSgyvXMoKh0hfg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=14897&min_rtt=14107&rtt_var=5854&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=836&delivery_rate=205288&cwnd=249&unsent_bytes=0&cid=8b8028bece58ec35&ts=976&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "753",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:27:59.355Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/wojciech-d-cejrowski-523474a2", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=6a2nLU4GKbWURsTHWlFjjNjrSemCll6feHl2vYjYzqeIXw8EEe7083Z9SNWOl9jv4pSx9keerTOutshgtLMjpVj4vgScaWHKV8A0KDOO9Ia1woPd7ItjjKZHNCCdAqRcFcyg3T9kOr9x1s4lusbtSc8KPK6BigslKT5iE9RMTNwzI85Y42elXlGBC1VJF4XJ4OJhqes8OhSX9VIM61k97XzNqy47WqXcDHz2HBZtskbBPOFwsTOwV", "total_result_count": 10000}
+2024-12-20T20:27:59.355Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/wojciech-d-cejrowski-523474a2",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=6a2nLU4GKbWURsTHWlFjjNjrSemCll6feHl2vYjYzqeIXw8EEe7083Z9SNWOl9jv4pSx9keerTOutshgtLMjpVj4vgScaWHKV8A0KDOO9Ia1woPd7ItjjKZHNCCdAqRcFcyg3T9kOr9x1s4lusbtSc8KPK6BigslKT5iE9RMTNwzI85Y42elXlGBC1VJF4XJ4OJhqes8OhSX9VIM61k97XzNqy47WqXcDHz2HBZtskbBPOFwsTOwV",
+  "total_result_count": 10000
+}
+2024-12-20T20:27:59.356Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:28:50.845Z - API route called
+2024-12-20T20:28:50.845Z - Request params: city=Warszawa&country=pl&page_size=1&enrich_profiles=skip
+2024-12-20T20:28:50.845Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?city=Warszawa&country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:28:50.845Z - Making request to Proxycurl
+2024-12-20T20:28:52.054Z - Response status: 200
+2024-12-20T20:28:52.054Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5261921bb7ee44-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:28:52 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=nR8nwzamJcl4XLoD2yKz0a95T08BvsBXqOkgLf7p5U%2FcWqdW367Z5wuZEJV5NjdiFtbKg7XqyGdXrLBHb5q6OI0iHaCo9HmcF85qH0%2BoVpoqMUjAVU3LmwBy2O8%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12919&min_rtt=12280&rtt_var=5062&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=836&delivery_rate=235830&cwnd=229&unsent_bytes=0&cid=7843c3e9c79b3bde&ts=1178&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "757",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:28:52.055Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/wojciech-d-cejrowski-523474a2", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=6a2nLUSZ1ocl89odiPAFSdgorsmzpmaYTLNNptjVaLVknf3kQPVmttitXgHzBkQbET33T4SnDS5AJEL49ydpfs4UliYbAMOoaEhVw5a4KJGcvJUb64tHrmAS6KUJIpUd4CqLoxQevqkgpPlp2XZRRLmATigiJgpGDXJ0RS4I9R6R14rXe9OJ1m4NPbsZNcMm6Hrt0oOa4sTibwbzFFsmgAXdEjSn915u4YOvnfkmkt336ZjnXCVAu", "total_result_count": 10000}
+2024-12-20T20:28:52.055Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/wojciech-d-cejrowski-523474a2",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=6a2nLUSZ1ocl89odiPAFSdgorsmzpmaYTLNNptjVaLVknf3kQPVmttitXgHzBkQbET33T4SnDS5AJEL49ydpfs4UliYbAMOoaEhVw5a4KJGcvJUb64tHrmAS6KUJIpUd4CqLoxQevqkgpPlp2XZRRLmATigiJgpGDXJ0RS4I9R6R14rXe9OJ1m4NPbsZNcMm6Hrt0oOa4sTibwbzFFsmgAXdEjSn915u4YOvnfkmkt336ZjnXCVAu",
+  "total_result_count": 10000
+}
+2024-12-20T20:28:52.055Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:36:54.903Z - API route called
+2024-12-20T20:36:54.904Z - Request params: city=Warszawa&current_role_title=Backend+Developer&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:36:54.904Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Warszawa&current_role_title=Backend+Developer&page_size=1&enrich_profiles=skip&use_cache=if-present&use_cache=if-present
+2024-12-20T20:36:54.904Z - Making request to Proxycurl
+2024-12-20T20:36:56.199Z - Response status: 200
+2024-12-20T20:36:56.199Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f526d640d6aecc2-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:36:56 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=tT4QQtDB52UvQDpGgaclZUF1XGxiW%2BJSVX5aJIl9EA9bUKrRGVQdHlMZTrzZqS%2Ff1%2FEG2TuSQXAKujco79ijh5BedSuPfmir8yswxBwV%2Bo0JxidhQErvqhKn5iU%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12850&min_rtt=11759&rtt_var=5189&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=885&delivery_rate=246279&cwnd=243&unsent_bytes=0&cid=9e094016c4c5adf3&ts=1205&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "788",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:36:56.200Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/aliia-baimuratova-4b367a192", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=4zuX07A4hePX9a2wBcaO7uwdh3sJinoZNThwlOObt4kI1IOkUYbfzJN9Fr1lnd9KwpXBhSfateiXApMY80nQA7OEOvlmjyPVlrlJzJoE7ce9LUDiI3SbuBh65ht4Z1z5fZC8iViAB7bKD90C9c1XYcni7Jw2Pdmg9lu1HpolFHOVMcA0tj8OMTRyhLSEn7aWS5SxdjNraAK4gxWwn21rh9fGrmPIzLd2iqKi6ChxznzfdlclR0YgxgParftZ6o6wms2ADE1SRgqfalN3xiB5u0gs", "total_result_count": 80}
+2024-12-20T20:36:56.200Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/aliia-baimuratova-4b367a192",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=4zuX07A4hePX9a2wBcaO7uwdh3sJinoZNThwlOObt4kI1IOkUYbfzJN9Fr1lnd9KwpXBhSfateiXApMY80nQA7OEOvlmjyPVlrlJzJoE7ce9LUDiI3SbuBh65ht4Z1z5fZC8iViAB7bKD90C9c1XYcni7Jw2Pdmg9lu1HpolFHOVMcA0tj8OMTRyhLSEn7aWS5SxdjNraAK4gxWwn21rh9fGrmPIzLd2iqKi6ChxznzfdlclR0YgxgParftZ6o6wms2ADE1SRgqfalN3xiB5u0gs",
+  "total_result_count": 80
+}
+2024-12-20T20:36:56.201Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:37:07.509Z - API route called
+2024-12-20T20:37:07.509Z - Request params: city=Warsaw&current_role_title=Backend+Developer&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:37:07.509Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Warsaw&current_role_title=Backend+Developer&page_size=1&enrich_profiles=skip&use_cache=if-present&use_cache=if-present
+2024-12-20T20:37:07.509Z - Making request to Proxycurl
+2024-12-20T20:37:08.301Z - Response status: 200
+2024-12-20T20:37:08.303Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f526db26882ee49-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:37:08 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=NQIP3MkLQrMT5QIqprpUPTeFpNu267jKMppfcneovgnkgAxmNHTxTZ0pz9PJrlkV4xSEMcIr2VNQgI0XqpIwNOTsFo9U4esmLXeeaCywiYan9AN08%2FfDUcoiTok%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13709&min_rtt=11811&rtt_var=5785&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=883&delivery_rate=245195&cwnd=251&unsent_bytes=0&cid=2c66b9a621b30fc2&ts=758&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "324",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:37:08.305Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=IB1VGbzngY1JUCUlGPS9TjpzSL4yrZz1Xm0zSFrylKHFR85HoVAyjAtW7SqijwKBekjaWnsGeFxu7a4C7SujNpvbyhjpSWIq62nAkYvpxXbBxqvl7uJWfYEtdbDIg9eKkcapB6eXnstQFvnnhzcwnYM2FFMqbeEeF6i4MbdzT6GUFy4ks9xC3tnNvPYWcBJzqSQgIOGm5XbgOHckcwFNcpur3cy72ElZjTVS31idx6lVmkPEINTdX6IQRJfe9gGFY9PypaskLmewe2yhUxJJj", "total_result_count": 170}
+2024-12-20T20:37:08.305Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=IB1VGbzngY1JUCUlGPS9TjpzSL4yrZz1Xm0zSFrylKHFR85HoVAyjAtW7SqijwKBekjaWnsGeFxu7a4C7SujNpvbyhjpSWIq62nAkYvpxXbBxqvl7uJWfYEtdbDIg9eKkcapB6eXnstQFvnnhzcwnYM2FFMqbeEeF6i4MbdzT6GUFy4ks9xC3tnNvPYWcBJzqSQgIOGm5XbgOHckcwFNcpur3cy72ElZjTVS31idx6lVmkPEINTdX6IQRJfe9gGFY9PypaskLmewe2yhUxJJj",
+  "total_result_count": 170
+}
+2024-12-20T20:37:08.306Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:37:30.794Z - API route called
+2024-12-20T20:37:30.795Z - Request params: city=Warsaw&current_role_title=Backend+Developer&country=PL&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:37:30.795Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Warsaw&current_role_title=Backend+Developer&country=PL&page_size=1&enrich_profiles=skip&use_cache=if-present&use_cache=if-present
+2024-12-20T20:37:30.795Z - Making request to Proxycurl
+2024-12-20T20:37:31.328Z - Response status: 200
+2024-12-20T20:37:31.329Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f526e43f98cee3c-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:37:31 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=JdCC3x02zB47E5S%2Bzrefw3IPvMUAIhzWj%2FnQkxbDjnQBVq0lpQr%2BE1VJZzGFqrh9%2FMvk3q0cM5%2B1fevMTHYSdRI6LeNwdfFc3%2FzXAXo3rxfejztcCZJPRDjx34Q%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13839&min_rtt=12799&rtt_var=5542&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=894&delivery_rate=226267&cwnd=231&unsent_bytes=0&cid=3f227b60c84400ca&ts=500&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "286",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:37:31.331Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?country=PL&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=9QnIqM3IpTW2yXSSA1JnC5GXajCH6eOv8lBcXeX1CUe5tCbfrDwIGPe94TcubiOskPzDRb6Eh4rqKUjCH3KrTXaCETRYvkW6vXGivKRYDBaQIvBdobWvhvFSzYLENFsgAEdelp8vrh5fpTAV4IV3hOA4YBAanLPzF1Vk82vl54AX6mkvUXk9a9fAdobHymPwKJ5i1bTXvmxO1FXlZU08eaDCwllVVTCOwumqzlx1FWcx7SqE7ee4RxrQ4OalBpMrApcHhDtPEkxxY08PsCfZdQr2q208ppuhiyeeB5Uw5PTF", "total_result_count": 169}
+2024-12-20T20:37:31.331Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?country=PL&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=9QnIqM3IpTW2yXSSA1JnC5GXajCH6eOv8lBcXeX1CUe5tCbfrDwIGPe94TcubiOskPzDRb6Eh4rqKUjCH3KrTXaCETRYvkW6vXGivKRYDBaQIvBdobWvhvFSzYLENFsgAEdelp8vrh5fpTAV4IV3hOA4YBAanLPzF1Vk82vl54AX6mkvUXk9a9fAdobHymPwKJ5i1bTXvmxO1FXlZU08eaDCwllVVTCOwumqzlx1FWcx7SqE7ee4RxrQ4OalBpMrApcHhDtPEkxxY08PsCfZdQr2q208ppuhiyeeB5Uw5PTF",
+  "total_result_count": 169
+}
+2024-12-20T20:37:31.331Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:39:49.619Z - API route called
+2024-12-20T20:39:49.620Z - Request params: city=Warsaw&current_role_title=Backend+Developer&country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:39:49.620Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Warsaw&current_role_title=Backend+Developer&country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:39:49.620Z - Making request to Proxycurl
+2024-12-20T20:39:50.856Z - Response status: 200
+2024-12-20T20:39:50.857Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5271a7a8cf0213-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:39:50 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=VKRYMbryjGDjrEAYkSqlyUAqvRvOaLQ%2B4Ol%2BSlWczKUV%2BA%2Fmi6xplw5AUTVW8klAS8StYuhbatMRb15dRE0noZ2pFcMMaFVSY6T6N20gmqUk%2BLoiXERFKPD76cg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13750&min_rtt=12996&rtt_var=5412&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=1252&delivery_rate=222837&cwnd=240&unsent_bytes=0&cid=88038d8e466919bb&ts=1197&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "775",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:39:50.859Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=9QnIqNXxVQDyfcXXl8Ay8UdxfM8m2P98hrvdWxhzyzzbVYq4OmbXmxbjnSe2BWyrWEOH06GuzAKJRIKexMmwGRZpb0U8jvMaBpeYh2OlCEU91R55OmQNnp29FDkZGv9nMADXPVdo26msRJySC5QlJDnGI1gvdfrjsAuQy6jNV2uKf4Kfop4J9k72By2WJywxZaw48cNYCGNY1HerdRu1Dgyfp6tPGenFxrpK0XAwtGxDgZNHol8hq7VHKs1iBngxjfqbp6uL28ZQu5uikLjiBXW0GbSktcKS1FhTo7NoWhCs", "total_result_count": 169}
+2024-12-20T20:39:50.859Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/alberto-c-81204443",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?country=pl&page_size=1&enrich_profiles=skip&use_cache=if-present&next_token=9QnIqNXxVQDyfcXXl8Ay8UdxfM8m2P98hrvdWxhzyzzbVYq4OmbXmxbjnSe2BWyrWEOH06GuzAKJRIKexMmwGRZpb0U8jvMaBpeYh2OlCEU91R55OmQNnp29FDkZGv9nMADXPVdo26msRJySC5QlJDnGI1gvdfrjsAuQy6jNV2uKf4Kfop4J9k72By2WJywxZaw48cNYCGNY1HerdRu1Dgyfp6tPGenFxrpK0XAwtGxDgZNHol8hq7VHKs1iBngxjfqbp6uL28ZQu5uikLjiBXW0GbSktcKS1FhTo7NoWhCs",
+  "total_result_count": 169
+}
+2024-12-20T20:39:50.859Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:42:09.918Z - API route called
+2024-12-20T20:42:09.919Z - Request params: city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Sarah&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:42:09.919Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Sarah&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:42:09.919Z - Making request to Proxycurl
+2024-12-20T20:42:11.554Z - Response status: 200
+2024-12-20T20:42:11.568Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f52751488c9bf80-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:42:11 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=soSVN7nsyR2taz%2FpOyAcfgPpBmUs9jVs%2BEBvX3lO%2BFO6%2BTFt%2BZTmndcnoFGdt2wv0ML1KrTqK1K29s79mOgsLR9%2FFht557pY8%2BQeLLvyPSG3t0ldyzBO%2BnKrxos%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12841&min_rtt=12122&rtt_var=5059&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=1304&delivery_rate=238904&cwnd=249&unsent_bytes=0&cid=3a166c83485a26ce&ts=1598&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "1140",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:42:11.569Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/sarah-johnson-b159673", "profile": null, "last_updated": null}], "next_page": null, "total_result_count": 1}
+2024-12-20T20:42:11.569Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/sarah-johnson-b159673",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": null,
+  "total_result_count": 1
+}
+2024-12-20T20:42:11.569Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:45:42.153Z - API route called
+2024-12-20T20:45:42.154Z - Request params: city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=John&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:45:42.154Z - Proxycurl URL: https://nubela.co/proxycurl//api/v2/search/person/?city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=John&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:45:42.154Z - Making request to Proxycurl
+2024-12-20T20:45:43.373Z - Response status: 200
+2024-12-20T20:45:43.373Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f527a42fd5e0296-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:45:43 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=gJQDZpglyVdyRpXAvT3ZPNR7SmePdwDfNUqI8Ab%2Fks2VyJtpRYpMKfqmt2Zf6Xf9%2B11H1B1pLV2sLCp461qJUOlxdu%2FZOfvsb2PtfWu1u6cfI91guZH%2BOzNXIDg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13124&min_rtt=13022&rtt_var=5088&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1574&delivery_rate=104616&cwnd=247&unsent_bytes=0&cid=538ae27660c7c756&ts=1181&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "955",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:45:43.375Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/john-jackson-0537b09", "profile": null, "last_updated": null}], "next_page": null, "total_result_count": 1}
+2024-12-20T20:45:43.375Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/john-jackson-0537b09",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": null,
+  "total_result_count": 1
+}
+2024-12-20T20:45:43.375Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:47:09.994Z - API route called
+2024-12-20T20:47:09.994Z - Request params: region=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=John&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:47:09.994Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person?use_cache=if-present&region=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=John&page_size=1&enrich_profiles=skip&use_cache=if-present
+2024-12-20T20:47:09.994Z - Making request to Proxycurl
+2024-12-20T20:47:10.797Z - Response status: 200
+2024-12-20T20:47:10.798Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f527c67fa44b206-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:47:10 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Zsk1xZjD2h65lSopSIbDJF3W%2BswXjlv4aROKt9z6PBMWj41Iu54%2FptVwEmUqHLPDSWiDQU4NGtV1%2BwBA89YEcIdafw1DGvMh8Ed7bbCrVOWdjBPGxo%2FT%2FeZSK9o%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12097&min_rtt=12073&rtt_var=4577&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=946&delivery_rate=236003&cwnd=229&unsent_bytes=0&cid=0fcf018caff0504f&ts=768&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "339",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T20:47:10.799Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/john-johnson-3a126258", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person?use_cache=if-present&country=US&page_size=1&enrich_profiles=skip&next_token=2UA7wvgGfodYMaLohVlygybzrVCi9Irwlhu9aPYWK8oWNzeaVnXmYORK2iwD2fA48KbtCBD72knYy9cshtFEdYqzT6GQYC0jVddqXO6h3qPU7MNOeTqBtLu8nUQDk84jYHDhx65WFYWQWSahsb8EWOsMX9wD1DLQNBVahauGB9ySwQKcE9nZpGczEQMTF1ib5cVe3hUVSABR3O2jhYoOu9MFDWfWE2FetLaIJM5dQLPH3dj0LjsFgwvqjxt9fzirsI5z3g8owuqAOnGzbjxBb8lNzuTKZD5WPZCbHLboJAzSUdonwR0KJuILOXWgVpXIvoKr4ZDyKqyEFM1Xxen5SafueM7r3h9ibg90hviYgDz9o8ht4LigoEklMdZcl06aa1SMM", "total_result_count": 2}
+2024-12-20T20:47:10.800Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/john-johnson-3a126258",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person?use_cache=if-present&country=US&page_size=1&enrich_profiles=skip&next_token=2UA7wvgGfodYMaLohVlygybzrVCi9Irwlhu9aPYWK8oWNzeaVnXmYORK2iwD2fA48KbtCBD72knYy9cshtFEdYqzT6GQYC0jVddqXO6h3qPU7MNOeTqBtLu8nUQDk84jYHDhx65WFYWQWSahsb8EWOsMX9wD1DLQNBVahauGB9ySwQKcE9nZpGczEQMTF1ib5cVe3hUVSABR3O2jhYoOu9MFDWfWE2FetLaIJM5dQLPH3dj0LjsFgwvqjxt9fzirsI5z3g8owuqAOnGzbjxBb8lNzuTKZD5WPZCbHLboJAzSUdonwR0KJuILOXWgVpXIvoKr4ZDyKqyEFM1Xxen5SafueM7r3h9ibg90hviYgDz9o8ht4LigoEklMdZcl06aa1SMM",
+  "total_result_count": 2
+}
+2024-12-20T20:47:10.800Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T20:49:52.889Z - API route called
+2024-12-20T20:49:52.890Z - Request params: page_size=10&enrich_profiles=enrich&use_cache=if-present&city=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=
+2024-12-20T20:49:52.890Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=10&enrich_profiles=enrich&use_cache=if-present&city=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=&use_cache=if-present
+2024-12-20T20:49:52.890Z - Making request to Proxycurl
+2024-12-20T20:49:53.431Z - Response status: 400
+2024-12-20T20:49:53.432Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f52806258bdb16d-WAW",
+  "connection": "keep-alive",
+  "content-length": "100",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:49:53 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=KduH6OZwrxZH6DI3wexKO%2BMj%2F3nP3mOi35MaEj%2BzzP5SC%2BsvxbM1V2ExPzmoEQ6x6tflV4YdDvIpM6%2F0ZRHexRqeLuPJTEqJFwhh9idZbetMYZ7OY2BmBrsXdKU%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13728&min_rtt=11831&rtt_var=5791&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=944&delivery_rate=244780&cwnd=223&unsent_bytes=0&cid=a83422d0410a1b93&ts=441&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "18",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T20:49:53.432Z - Raw response: {"code": 400, "name": "Bad Request", "errors": ["Unable to parse 'first_name': Failed to parse ''"]}
+2024-12-20T20:49:53.432Z - Error response: 400 {"code": 400, "name": "Bad Request", "errors": ["Unable to parse 'first_name': Failed to parse ''"]}
+2024-12-20T20:50:13.800Z - API route called
+2024-12-20T20:50:13.801Z - Request params: page_size=10&enrich_profiles=enrich&use_cache=if-present&city=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Jack
+2024-12-20T20:50:13.801Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=10&enrich_profiles=enrich&use_cache=if-present&city=New+York+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Jack&use_cache=if-present
+2024-12-20T20:50:13.801Z - Making request to Proxycurl
+2024-12-20T20:50:14.541Z - Response status: 200
+2024-12-20T20:50:14.542Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5280e4cb41bf2f-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:50:14 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Xs356ifKOehkCWSO3o3qbTezJ1q3WbnW2%2FIyqOHmHPTB8kaSNGq9dLWswSbLx3BULco2DXOXumnDUwuDiBvFQZd5fgPyvO1fRAQgDtkd7hIs8SMX9PWxMuA6Oi4%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=14721&min_rtt=12554&rtt_var=6256&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1219&delivery_rate=115341&cwnd=247&unsent_bytes=0&cid=bddadd5f14e35eba&ts=706&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "470",
+  "x-proxycurl-credit-cost": "4"
+}
+2024-12-20T20:50:14.544Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/jack-jackson-7469401b2", "profile": {"public_identifier": "jack-jackson-7469401b2", "profile_pic_url": null, "background_cover_image_url": null, "first_name": "jack", "last_name": "jackson", "full_name": "jack jackson", "follower_count": null, "occupation": "founder", "headline": null, "summary": null, "country": "US", "country_full_name": "united states", "city": "new york", "state": "New York", "experiences": [{"starts_at": null, "ends_at": null, "company": "maxilona", "company_linkedin_profile_url": null, "company_facebook_profile_url": null, "title": "founder", "description": null, "location": null, "logo_url": null}], "education": [], "languages": [], "languages_and_proficiencies": [], "accomplishment_organisations": [], "accomplishment_publications": [], "accomplishment_honors_awards": [], "accomplishment_patents": [], "accomplishment_courses": [], "accomplishment_projects": [], "accomplishment_test_scores": [], "volunteer_work": [], "certifications": [], "connections": 0, "people_also_viewed": [], "recommendations": [], "activities": [], "similarly_named_profiles": [], "articles": [], "groups": [], "skills": []}, "last_updated": "2022-01-28T23:07:16"}], "next_page": null, "total_result_count": 1}
+2024-12-20T20:50:14.545Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/jack-jackson-7469401b2",
+      "profile": {
+        "public_identifier": "jack-jackson-7469401b2",
+        "profile_pic_url": null,
+        "background_cover_image_url": null,
+        "first_name": "jack",
+        "last_name": "jackson",
+        "full_name": "jack jackson",
+        "follower_count": null,
+        "occupation": "founder",
+        "headline": null,
+        "summary": null,
+        "country": "US",
+        "country_full_name": "united states",
+        "city": "new york",
+        "state": "New York",
+        "experiences": [
+          {
+            "starts_at": null,
+            "ends_at": null,
+            "company": "maxilona",
+            "company_linkedin_profile_url": null,
+            "company_facebook_profile_url": null,
+            "title": "founder",
+            "description": null,
+            "location": null,
+            "logo_url": null
+          }
+        ],
+        "education": [],
+        "languages": [],
+        "languages_and_proficiencies": [],
+        "accomplishment_organisations": [],
+        "accomplishment_publications": [],
+        "accomplishment_honors_awards": [],
+        "accomplishment_patents": [],
+        "accomplishment_courses": [],
+        "accomplishment_projects": [],
+        "accomplishment_test_scores": [],
+        "volunteer_work": [],
+        "certifications": [],
+        "connections": 0,
+        "people_also_viewed": [],
+        "recommendations": [],
+        "activities": [],
+        "similarly_named_profiles": [],
+        "articles": [],
+        "groups": [],
+        "skills": []
+      },
+      "last_updated": "2022-01-28T23:07:16"
+    }
+  ],
+  "next_page": null,
+  "total_result_count": 1
+}
+2024-12-20T20:50:14.546Z - Transformed response: {
+  "total_result_count": 1,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/jack-jackson-7469401b2",
+      "profile": {
+        "public_identifier": "jack-jackson-7469401b2",
+        "profile_pic_url": null,
+        "background_cover_image_url": null,
+        "first_name": "jack",
+        "last_name": "jackson",
+        "full_name": "jack jackson",
+        "follower_count": null,
+        "occupation": "founder",
+        "headline": null,
+        "summary": null,
+        "country": "US",
+        "country_full_name": "united states",
+        "city": "new york",
+        "state": "New York",
+        "experiences": [
+          {
+            "starts_at": null,
+            "ends_at": null,
+            "company": "maxilona",
+            "company_linkedin_profile_url": null,
+            "company_facebook_profile_url": null,
+            "title": "founder",
+            "description": null,
+            "location": null,
+            "logo_url": null
+          }
+        ],
+        "education": [],
+        "languages": [],
+        "languages_and_proficiencies": [],
+        "accomplishment_organisations": [],
+        "accomplishment_publications": [],
+        "accomplishment_honors_awards": [],
+        "accomplishment_patents": [],
+        "accomplishment_courses": [],
+        "accomplishment_projects": [],
+        "accomplishment_test_scores": [],
+        "volunteer_work": [],
+        "certifications": [],
+        "connections": 0,
+        "people_also_viewed": [],
+        "recommendations": [],
+        "activities": [],
+        "similarly_named_profiles": [],
+        "articles": [],
+        "groups": [],
+        "skills": []
+      }
+    }
+  ]
+}
+2024-12-20T20:56:52.246Z - API route called
+2024-12-20T20:56:52.247Z - Request params: page_size=10&enrich_profiles=enrich&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=%28hospital+OR+healthcare+provider%29&current_company_employee_count_min=1000&current_company_funding_amount_min=20000000&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English
+2024-12-20T20:56:52.247Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=10&enrich_profiles=enrich&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=%28hospital+OR+healthcare+provider%29&current_company_employee_count_min=1000&current_company_funding_amount_min=20000000&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English&use_cache=if-present
+2024-12-20T20:56:52.247Z - Making request to Proxycurl
+2024-12-20T20:56:53.395Z - Response status: 200
+2024-12-20T20:56:53.398Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f528a9f4b180273-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 20:56:53 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2FXXwwz8VoJaigC3cPd1AJ3ObZds9d%2BG6v0PQZacmKgHO51EYQrj7XB05KaLz2fpAhNO9d5nnnp%2Fr3OIfp8czQYbpgUCClX%2BulxXpVDmpgDnQ5B0mpyvNs8lP1js%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12970&min_rtt=12696&rtt_var=4957&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=1307&delivery_rate=228103&cwnd=248&unsent_bytes=0&cid=d085b6d5323162fc&ts=1068&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "831",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T20:56:53.399Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T20:56:53.399Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T20:56:53.400Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T21:01:12.299Z - API route called
+2024-12-20T21:01:12.300Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=%28hospital+OR+healthcare+provider%29&current_company_employee_count_min=1000&current_company_funding_amount_min=200&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English
+2024-12-20T21:01:12.300Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=%28hospital+OR+healthcare+provider%29&current_company_employee_count_min=1000&current_company_funding_amount_min=200&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=%28Spanish+OR+Mandarin%29+AND+English&use_cache=if-present
+2024-12-20T21:01:12.300Z - Making request to Proxycurl
+2024-12-20T21:01:13.784Z - Response status: 200
+2024-12-20T21:01:13.786Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5290f86ad8357b-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:01:13 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=UA6S2Fkf53XN6HQZtsxv524lF5Lr8WF%2BCcJycdcCOfV7LNQorX4xlIHnxP3scGGshJ5Wtf%2FZPEgyjZOLf%2BDr0L2LVQOhE5kfJonx5FjqvqqjdZxa0W1DqUffFNI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12764&min_rtt=11707&rtt_var=5145&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=1299&delivery_rate=247373&cwnd=242&unsent_bytes=0&cid=16091e93171f56ec&ts=1448&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "1028",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:01:13.789Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T21:01:13.791Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T21:01:13.793Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T21:01:50.805Z - API route called
+2024-12-20T21:01:50.806Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=hospital*&current_company_employee_count_min=1000&current_company_funding_amount_min=200&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=english
+2024-12-20T21:01:50.806Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=%28MD+AND+%28Harvard+OR+Johns+Hopkins+OR+Stanford+OR+UCSF+OR+UCLA%29+AND+published+research+papers%29+OR+%28Master%27s+in+Healthcare+Administration+AND+experience%3A5%2B+years%29&current_company_name=hospital*&current_company_employee_count_min=1000&current_company_funding_amount_min=200&city=%28Boston+OR+NYC+OR+SF+Bay+Area%29&languages=english&use_cache=if-present
+2024-12-20T21:01:50.806Z - Making request to Proxycurl
+2024-12-20T21:01:51.594Z - Response status: 200
+2024-12-20T21:01:51.596Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5291e90e2ebbc6-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:01:51 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=34o1sFvVmxlgI%2FUIk16lWOj98fL0QA51CYGeqoA%2FUNeJwVMjTDnGXa9x2MkoeDuBzhOIsLROSjpK5wl6UyFIeIevVX6dIva4C9rc9%2FMmnuh0pP16GO1ELd8g4ic%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12899&min_rtt=12652&rtt_var=4921&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=1241&delivery_rate=228896&cwnd=239&unsent_bytes=0&cid=fa6579c519759198&ts=736&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "469",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:01:51.598Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T21:01:51.599Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T21:01:51.599Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T21:02:07.058Z - API route called
+2024-12-20T21:02:07.058Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=MD&current_company_name=hospital*&current_company_employee_count_min=100&current_company_funding_amount_min=200&city=Boston&languages=english
+2024-12-20T21:02:07.058Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=MD&current_company_name=hospital*&current_company_employee_count_min=100&current_company_funding_amount_min=200&city=Boston&languages=english&use_cache=if-present
+2024-12-20T21:02:07.058Z - Making request to Proxycurl
+2024-12-20T21:02:08.277Z - Response status: 200
+2024-12-20T21:02:08.280Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f52924e9b69bf67-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:02:08 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=jObcFFueqntPMeH4QEjRCZSupe260Lbpep3%2BwjR9Akks6vPsE4XKEuV%2Bde3sbxxoIAZdWMF8NZkf1UZIyEsZnOARXedNQfRy8FutHxQO4yZ4hAh1Gh%2FfoEow%2B88%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13149&min_rtt=12975&rtt_var=5213&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1307&delivery_rate=100786&cwnd=250&unsent_bytes=0&cid=66b8bd0c25942d26&ts=1186&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "759",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:02:08.281Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T21:02:08.282Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T21:02:08.282Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T21:02:36.178Z - API route called
+2024-12-20T21:02:36.178Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=Medicine*&current_company_name=hospital*&current_company_employee_count_min=10&current_company_funding_amount_min=2&city=Boston&languages=english
+2024-12-20T21:02:36.178Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_company_industry=healthcare&education_field_of_study=Medicine*&current_company_name=hospital*&current_company_employee_count_min=10&current_company_funding_amount_min=2&city=Boston&languages=english&use_cache=if-present
+2024-12-20T21:02:36.178Z - Making request to Proxycurl
+2024-12-20T21:02:37.394Z - Response status: 200
+2024-12-20T21:02:37.395Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5293049be2ecc3-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:02:37 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=eYcgrr9JwV%2BH9VPLYvxHgLr8vLIsPyRlzC7Gpn%2FKm4%2FL2JfuFTQz%2BywDq3mRF91W9ymJ%2FrUF0t9%2FP9ntiHANrvMjliWw4xpxiUliWpf7gq%2Bfv%2FDFyxGOlfIVzcA%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=14844&min_rtt=13809&rtt_var=5917&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=1040&delivery_rate=209718&cwnd=245&unsent_bytes=0&cid=f54733520a8c9a05&ts=1183&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "763",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:02:37.396Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T21:02:37.397Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T21:02:37.397Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T21:02:57.262Z - API route called
+2024-12-20T21:02:57.263Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Sarah
+2024-12-20T21:02:57.263Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&city=Seattle+OR+Los+Angeles&current_role_title=founder&country=US&last_name=Jackson+OR+Johnson&first_name=Sarah&use_cache=if-present
+2024-12-20T21:02:57.263Z - Making request to Proxycurl
+2024-12-20T21:02:58.307Z - Response status: 200
+2024-12-20T21:02:58.308Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5293885fa3eead-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:02:58 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rt4myM8F79bLJyzH1H23TFGbWEV1WsSDp%2BAN54GPZjZ3p9mrr9G0evs8gqcJqC2zz7798brv8pUrDz2q7ln%2Blscw6FphoGEwORCN7wNiWA0pZNDszOpmlVqUK7s%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=14767&min_rtt=13661&rtt_var=5913&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1216&delivery_rate=105995&cwnd=239&unsent_bytes=0&cid=792d26199bc1f111&ts=1012&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "790",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T21:02:58.308Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/sarah-johnson-b159673", "profile": null, "last_updated": null}], "next_page": null, "total_result_count": 1}
+2024-12-20T21:02:58.309Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/sarah-johnson-b159673",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": null,
+  "total_result_count": 1
+}
+2024-12-20T21:02:58.310Z - Transformed response: {
+  "total_result_count": 1,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/sarah-johnson-b159673",
+      "profile": {}
+    }
+  ]
+}
+2024-12-20T21:03:46.750Z - API route called
+2024-12-20T21:03:46.751Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=frontend+developer&skills=React&country=Poland
+2024-12-20T21:03:46.751Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=frontend+developer&skills=React&country=Poland&use_cache=if-present
+2024-12-20T21:03:46.751Z - Making request to Proxycurl
+2024-12-20T21:03:47.095Z - Response status: 400
+2024-12-20T21:03:47.096Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5294bdac72eebd-WAW",
+  "connection": "keep-alive",
+  "content-length": "116",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:03:47 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=sMzp2N3GoNyqhFLJuI2bP0ZJVqkkCJUPSzjpKj0auQgsVpl8Rzx7HTtN94Ngr1oRQeFM0Z79AA08oGJDl2v%2FPm9SjJq07HT68%2FHU6y574j5O2l6jxPc1oIX3rzo%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13758&min_rtt=12358&rtt_var=5634&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=899&delivery_rate=234342&cwnd=250&unsent_bytes=0&cid=c5e611773a82e06e&ts=292&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "59",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:03:47.097Z - Raw response: {"code": 400, "name": "Bad Request", "errors": ["Invalid value 'country': Must be an Alpha-2 ISO3166 country code"]}
+2024-12-20T21:03:47.097Z - Error response: 400 {"code": 400, "name": "Bad Request", "errors": ["Invalid value 'country': Must be an Alpha-2 ISO3166 country code"]}
+2024-12-20T21:04:13.409Z - API route called
+2024-12-20T21:04:13.410Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=frontend+developer&skills=React&country=PL
+2024-12-20T21:04:13.410Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=frontend+developer&skills=React&country=PL&use_cache=if-present
+2024-12-20T21:04:13.410Z - Making request to Proxycurl
+2024-12-20T21:04:14.714Z - Response status: 200
+2024-12-20T21:04:14.716Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5295644b2a34a3-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:04:14 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=eBWeMZkQypbsiiL9gaRvxS6jaKjModHbo%2FgLz%2FGzUhSJ6BTA6pZE6aFmB0Uw%2BO4rZmV1%2BhW60YovVi5Iqj4I1vCrW8dueISoiY3CYpRL6ya4dCqAXdAtkl919xo%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12834&min_rtt=12164&rtt_var=5040&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1166&delivery_rate=119039&cwnd=249&unsent_bytes=0&cid=bda7eb6fa3e2bde0&ts=1272&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "866",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T21:04:14.719Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&country=PL&next_token=2ao7PvwZpG8YciuLAbuRwaS7bZk6qRksSfVYNPmuz9XfQQyzuJkK5LXKu7oNrQUEF8crE6N4MtVNeiyZmllvxlrYY75weNPLUbDozNodu6Mpfq81KAdmLezwW5VWGnoPrhmJHyzFzlE2LdDe879lWjUWgkykUyWyMK3CW93ViJu0FVgurLlIpY7KXBjMKGEkwijCRaOaS5V5UBCsDfDJ0s8Cl3BfkuMpz3NGEy2xrX5KgIiZzMCeEYuX4AKTPnb7KQ7fIxuOIKbllltNJaM8bpEkzmFghtV1xZfcZiihUSkRv9v", "total_result_count": 1043}
+2024-12-20T21:04:14.721Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&country=PL&next_token=2ao7PvwZpG8YciuLAbuRwaS7bZk6qRksSfVYNPmuz9XfQQyzuJkK5LXKu7oNrQUEF8crE6N4MtVNeiyZmllvxlrYY75weNPLUbDozNodu6Mpfq81KAdmLezwW5VWGnoPrhmJHyzFzlE2LdDe879lWjUWgkykUyWyMK3CW93ViJu0FVgurLlIpY7KXBjMKGEkwijCRaOaS5V5UBCsDfDJ0s8Cl3BfkuMpz3NGEy2xrX5KgIiZzMCeEYuX4AKTPnb7KQ7fIxuOIKbllltNJaM8bpEkzmFghtV1xZfcZiihUSkRv9v",
+  "total_result_count": 1043
+}
+2024-12-20T21:04:14.722Z - Transformed response: {
+  "total_result_count": 1043,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk",
+      "profile": {}
+    }
+  ]
+}
+2024-12-20T21:05:40.996Z - API route called
+2024-12-20T21:05:40.996Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=%28frontend+developer+OR+UI+developer+OR+web+developer+OR+JavaScript+developer%29&skills=React&country=Poland
+2024-12-20T21:05:40.996Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=%28frontend+developer+OR+UI+developer+OR+web+developer+OR+JavaScript+developer%29&skills=React&country=Poland&use_cache=if-present
+2024-12-20T21:05:40.997Z - Making request to Proxycurl
+2024-12-20T21:05:41.495Z - Response status: 400
+2024-12-20T21:05:41.497Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f529787bee5bf74-WAW",
+  "connection": "keep-alive",
+  "content-length": "116",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:05:41 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=yMt092oSvpTTXW9zff%2BIi4Vhb53YANkx51OVHS3r6ee7MkZpzIknCM8xYownntcRrtF2IK7UXQQsNki29sf%2BP2c5vdStMit8iGaxUMGUXJx1ha6%2FNPlak%2FDmyII%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12855&min_rtt=11899&rtt_var=5145&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=962&delivery_rate=243381&cwnd=251&unsent_bytes=0&cid=fbc6761f44478da4&ts=467&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "10",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:05:41.497Z - Raw response: {"code": 400, "name": "Bad Request", "errors": ["Invalid value 'country': Must be an Alpha-2 ISO3166 country code"]}
+2024-12-20T21:05:41.497Z - Error response: 400 {"code": 400, "name": "Bad Request", "errors": ["Invalid value 'country': Must be an Alpha-2 ISO3166 country code"]}
+2024-12-20T21:05:50.984Z - API route called
+2024-12-20T21:05:50.984Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=%28frontend+developer+OR+UI+developer+OR+web+developer+OR+JavaScript+developer%29&skills=React&country=PL
+2024-12-20T21:05:50.985Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&current_role_title=%28frontend+developer+OR+UI+developer+OR+web+developer+OR+JavaScript+developer%29&skills=React&country=PL&use_cache=if-present
+2024-12-20T21:05:50.985Z - Making request to Proxycurl
+2024-12-20T21:05:52.080Z - Response status: 200
+2024-12-20T21:05:52.081Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5297c61986eecd-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:05:52 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=wESeGvfo3rJ0Pbl0UJOaFwOhaTATD6X36YCwf4itTMCC0iz%2FkBMB8YGxgtAu5TYLdENTkFDofSQ6kB2SPyxNP7QZU95HAqkEWSNOrgqxUBGapXr0AQG5QATQFpM%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12938&min_rtt=12578&rtt_var=4974&sent=3&recv=5&lost=0&retrans=0&sent_bytes=234&recv_bytes=1229&delivery_rate=115121&cwnd=250&unsent_bytes=0&cid=89e256e67641a10b&ts=1064&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "839",
+  "x-proxycurl-credit-cost": "3"
+}
+2024-12-20T21:05:52.082Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&country=PL&next_token=7xldAKD6tWuZ3i0PTAXNQ14LCDJPyr0O5LYvfWwPE2tMhyU0nDnyapQxFK8XCgulinZJhvSGBbGcDIz4mt7V3YLfYnZfxHfiG7wO5K0O02zFFCk5gQwUPE3ZF3YU6zPWIWPvAfgsRmGYxfuqT8vizkgixR4WiLPvFGcRRKMf7nWAEg05bW5vJmJ5kFCKDIOkCP073knE5StFp4EXmvqip8FWZG8mqxBvDdW90qhcHvP0VlZmnxVNzYTkhTbRm2idnDQuFsE0vJFhitswwn8CEbrwWRmD0EgBHtCcm4MUepfb5I5HTCHSMvN4nlTdEIGrXgzhPj7s5fzRK3Q3uJjlyGG2CMzPeM2WEoUdamrxcZUxMyeSrr9KyOLo0RXWpX", "total_result_count": 1327}
+2024-12-20T21:05:52.082Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&country=PL&next_token=7xldAKD6tWuZ3i0PTAXNQ14LCDJPyr0O5LYvfWwPE2tMhyU0nDnyapQxFK8XCgulinZJhvSGBbGcDIz4mt7V3YLfYnZfxHfiG7wO5K0O02zFFCk5gQwUPE3ZF3YU6zPWIWPvAfgsRmGYxfuqT8vizkgixR4WiLPvFGcRRKMf7nWAEg05bW5vJmJ5kFCKDIOkCP073knE5StFp4EXmvqip8FWZG8mqxBvDdW90qhcHvP0VlZmnxVNzYTkhTbRm2idnDQuFsE0vJFhitswwn8CEbrwWRmD0EgBHtCcm4MUepfb5I5HTCHSMvN4nlTdEIGrXgzhPj7s5fzRK3Q3uJjlyGG2CMzPeM2WEoUdamrxcZUxMyeSrr9KyOLo0RXWpX",
+  "total_result_count": 1327
+}
+2024-12-20T21:05:52.082Z - Transformed response: {
+  "total_result_count": 1327,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/pawelgosk",
+      "profile": {}
+    }
+  ]
+}
+2024-12-20T21:14:09.345Z - API route called
+2024-12-20T21:14:09.346Z - Request params: page_size=1&enrich_profiles=skip&use_cache=if-present&follower_count_min=500&past_company_industry=enterprise+SaaS&current_role_title=%28sales+professional+AND+%28sales+awards+AND+cloud+services%29%29&education_degree_name=%28Bachelor+OR+Master%29+AND+%28Business+OR+Marketing+OR+Communications%29&education_school_ranking_top=50&region=%28Singapore+OR+Hong+Kong+OR+Tokyo%29&languages=%28English+AND+Mandarin%29+OR+%28English+AND+Japanese%29&current_job_description=enterprise+sales+experience&current_company_founded_after_year=2018&current_company_funding_round=Series+A&current_company_type=PUBLIC_COMPANY&current_company_industry=%28AI+OR+cloud+OR+cybersecurity%29
+2024-12-20T21:14:09.346Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=1&enrich_profiles=skip&use_cache=if-present&follower_count_min=500&past_company_industry=enterprise+SaaS&current_role_title=%28sales+professional+AND+%28sales+awards+AND+cloud+services%29%29&education_degree_name=%28Bachelor+OR+Master%29+AND+%28Business+OR+Marketing+OR+Communications%29&education_school_ranking_top=50&region=%28Singapore+OR+Hong+Kong+OR+Tokyo%29&languages=%28English+AND+Mandarin%29+OR+%28English+AND+Japanese%29&current_job_description=enterprise+sales+experience&current_company_founded_after_year=2018&current_company_funding_round=Series+A&current_company_type=PUBLIC_COMPANY&current_company_industry=%28AI+OR+cloud+OR+cybersecurity%29&use_cache=if-present
+2024-12-20T21:14:09.346Z - Making request to Proxycurl
+2024-12-20T21:14:10.202Z - Response status: 200
+2024-12-20T21:14:10.203Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f52a3f11f56c3e0-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 21:14:10 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=DCRLoern2pR%2Boev3HwaLUCSQkynna%2F6D3KYn%2BXAPeHoxSgdWNz2CTuDkANfb26sy95QQhcXEiXt3BVLHb%2Fg541WAGEFsx1udrC3V%2FVpQ4XlJ7dhxFHvXC9e%2B4Zg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12877&min_rtt=12203&rtt_var=5058&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2832&recv_bytes=1448&delivery_rate=237318&cwnd=249&unsent_bytes=0&cid=84bce2e4f28aa4ef&ts=711&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "481",
+  "x-proxycurl-credit-cost": "0"
+}
+2024-12-20T21:14:10.204Z - Raw response: {"results": [], "next_page": null, "total_result_count": 0}
+2024-12-20T21:14:10.204Z - Parsed response: {
+  "results": [],
+  "next_page": null,
+  "total_result_count": 0
+}
+2024-12-20T21:14:10.204Z - Transformed response: {
+  "total_result_count": 0,
+  "results": []
+}
+2024-12-20T22:21:09.084Z - API route called
+2024-12-20T22:21:09.085Z - Request params: page_size=2&enrich_profiles=skip&use_cache=if-present&current_role_title=Fullstack*
+2024-12-20T22:21:09.085Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&current_role_title=Fullstack*&use_cache=if-present
+2024-12-20T22:21:09.085Z - Making request to Proxycurl
+2024-12-20T22:21:10.976Z - Response status: 200
+2024-12-20T22:21:10.976Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f530614bbc6bffd-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 22:21:11 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=4QAKoBKwlZjgY6IY0Va3JJ11rOXHwl%2Bx4Mn241n%2BaomfLZtnKHGUIyfoxgJDoM1Qa4Yf%2BNPFHl2sZa4y06wMgW3pvszK19VEHybhqxJ1jb5g%2Fek%2FjalggMPoPFk%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13728&min_rtt=11532&rtt_var=5893&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2833&recv_bytes=863&delivery_rate=251127&cwnd=238&unsent_bytes=0&cid=ea0cd4a8a4bad240&ts=1786&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "1352",
+  "x-proxycurl-credit-cost": "6"
+}
+2024-12-20T22:21:10.979Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/madeleine-von-heyl-1705a8125", "profile": null, "last_updated": null}, {"linkedin_profile_url": "https://www.linkedin.com/in/adjskyy", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&next_token=1ap3EbaZAYdBPiRGoRplUXea39I47NhgS5Kkgh4iqejNTPFCIEJsRSXzzUwnlML7WZmmW5tA2ajXSiFJA4TkKAHLyelWqNjdPkd5EUEWMpPPy8PW0PoptPxXcuECHwpl5PJsLvD9PDiZJWAgLyzxEKqdWxvDOnSYICmBzOEe8Ijr0VoPv9wNtrXA183rrwafB7cPt7tAj2Qqa69J1shL9RI2FLmDl8VsZrQDCSwcVxUBDMtStlDL", "total_result_count": 10000}
+2024-12-20T22:21:10.980Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/madeleine-von-heyl-1705a8125",
+      "profile": null,
+      "last_updated": null
+    },
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/adjskyy",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&next_token=1ap3EbaZAYdBPiRGoRplUXea39I47NhgS5Kkgh4iqejNTPFCIEJsRSXzzUwnlML7WZmmW5tA2ajXSiFJA4TkKAHLyelWqNjdPkd5EUEWMpPPy8PW0PoptPxXcuECHwpl5PJsLvD9PDiZJWAgLyzxEKqdWxvDOnSYICmBzOEe8Ijr0VoPv9wNtrXA183rrwafB7cPt7tAj2Qqa69J1shL9RI2FLmDl8VsZrQDCSwcVxUBDMtStlDL",
+  "total_result_count": 10000
+}
+2024-12-20T22:21:10.980Z - Transformed response: {
+  "total_result_count": 10000,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/madeleine-von-heyl-1705a8125",
+      "profile": {}
+    },
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/adjskyy",
+      "profile": {}
+    }
+  ]
+}
+2024-12-20T22:28:26.487Z - API route called
+2024-12-20T22:28:26.487Z - Request params: page_size=2&enrich_profiles=skip&use_cache=if-present&current_role_title=Fullstack+dev*
+2024-12-20T22:28:26.487Z - Proxycurl URL: https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&current_role_title=Fullstack+dev*&use_cache=if-present
+2024-12-20T22:28:26.487Z - Making request to Proxycurl
+2024-12-20T22:28:27.365Z - Response status: 200
+2024-12-20T22:28:27.366Z - Response headers: {
+  "access-control-allow-headers": "Content-Type, Authorization, X-Requested-With, CF-Access-Client-Id, CF-Access-Client-Secret",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "access-control-allow-origin": "https://sapiengraph.com",
+  "access-control-max-age": "3600",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "cf-ray": "8f5310c26d8734f1-WAW",
+  "connection": "keep-alive",
+  "content-encoding": "br",
+  "content-type": "application/json",
+  "date": "Fri, 20 Dec 2024 22:28:27 GMT",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CW0PougO1MTDfbxFAiTVnzuzfeChpK4m6REtGgNw71px%2B02YI%2Fa59UzyUQ90puUr1rNyNPQmosUBO7U94E9tDN8n%2B8m95ZnCPZI22%2FFe%2F6T%2Bx%2F9yTsgmaoPsc6k%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=12805&min_rtt=11733&rtt_var=5166&sent=4&recv=5&lost=0&retrans=0&sent_bytes=2831&recv_bytes=867&delivery_rate=246825&cwnd=244&unsent_bytes=0&cid=61993bcf31d20f88&ts=797&x=0\"",
+  "set-cookie": "PC_USER_INFO=eyJlbWFpbCI6ICJwaW90ckB0aGVoZWFydC5kZXYiLCAicmVmZXJyYWxfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTlrZFdOMFNXUWlPaUp1ZFdKbGJHRXVZMjhpTENKd2NtOWtkV04wVlhObGNrbGtJam9pYVRsS1ZYRmlhSEk1UlVSVk1sazNObVJ2WVdoR2NDSjkuVHNFNGd6TkRDZXlSNndHVTJWT0ExLVdzNEl5b2VDdUQ3ckpGYjN6TFI4OXlTeUM0ejE5d2xSZEtXRTVJbVFtdWhiVnNLT1JVeFdMeWQ1TkpDV2xkYncifQ==; Path=/; SameSite=Lax",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "transfer-encoding": "chunked",
+  "vary": "Cookie",
+  "x-content-type-options": "nosniff",
+  "x-envoy-upstream-service-time": "371",
+  "x-proxycurl-credit-cost": "6"
+}
+2024-12-20T22:28:27.369Z - Raw response: {"results": [{"linkedin_profile_url": "https://www.linkedin.com/in/adjskyy", "profile": null, "last_updated": null}, {"linkedin_profile_url": "https://www.linkedin.com/in/marvellous-adeogun-4a4550216", "profile": null, "last_updated": null}], "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&next_token=7TIX76G1ju9q9kUeLdwddnkLWzp8I3c1HG7BtsQjEP9JEBoJ9WluG1miE6jh57YsrUQHTW6xloYr6YElVylDgtQUvyRDuBobO8UwCxHBFjxBmUgE8E9eTzEQy9Z9P3WYvuQF8UvIbTow63fEPhRkk7SOQO1yGDgblPQGRfJKAmOuZfqLtWzKDOoO0L7Rlb2egs4IodWAQUNucJ5GkDSGywD915u5r6YS9tse1HSDWNL4MDdbBmGcamQ9Y", "total_result_count": 10000}
+2024-12-20T22:28:27.369Z - Parsed response: {
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/adjskyy",
+      "profile": null,
+      "last_updated": null
+    },
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/marvellous-adeogun-4a4550216",
+      "profile": null,
+      "last_updated": null
+    }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/v2/search/person/?page_size=2&enrich_profiles=skip&use_cache=if-present&next_token=7TIX76G1ju9q9kUeLdwddnkLWzp8I3c1HG7BtsQjEP9JEBoJ9WluG1miE6jh57YsrUQHTW6xloYr6YElVylDgtQUvyRDuBobO8UwCxHBFjxBmUgE8E9eTzEQy9Z9P3WYvuQF8UvIbTow63fEPhRkk7SOQO1yGDgblPQGRfJKAmOuZfqLtWzKDOoO0L7Rlb2egs4IodWAQUNucJ5GkDSGywD915u5r6YS9tse1HSDWNL4MDdbBmGcamQ9Y",
+  "total_result_count": 10000
+}
+2024-12-20T22:28:27.370Z - Transformed response: {
+  "total_result_count": 10000,
+  "results": [
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/adjskyy",
+      "profile": {}
+    },
+    {
+      "linkedin_profile_url": "https://www.linkedin.com/in/marvellous-adeogun-4a4550216",
+      "profile": {}
+    }
+  ]
+}

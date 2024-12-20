@@ -20,6 +20,14 @@ import { ChatContext } from '../providers'
 import { SearchService } from '@/services/search/searchService'
 import { useAuth } from '@/hooks/useAuth'
 import { useProject } from "@/contexts/ProjectContext"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { getQueryHistory } from '@/services/search/searchCache'
 
 export default function SearchQueryBuilderPage() {
   const [selectedFields, setSelectedFields] = useState<(keyof PeopleSearchQueryParams)[]>([])
@@ -28,11 +36,14 @@ export default function SearchQueryBuilderPage() {
   const [currentBooleanField, setCurrentBooleanField] = useState<keyof PeopleSearchQueryParams | null>(null)
   const [jsonInput, setJsonInput] = useState('')
   const [jsonError, setJsonError] = useState<string | null>(null)
+  const [queryHistory, setQueryHistory] = useState<Array<{ query_hash: string, parameters: any }>>([])
+  const [selectedQueryHash, setSelectedQueryHash] = useState<string | null>(null)
   const { toast } = useToast()
   const { user } = useAuth()
   const { activeProject } = useProject()
   const [isLoading, setIsLoading] = useState(false)
   const [searchResults, setSearchResults] = useState<string[]>([])
+  const { isChatOpen } = useContext(ChatContext ?? true);
 
   const addFields = (fields: (keyof PeopleSearchQueryParams)[]) => {
     setSelectedFields([...new Set([...selectedFields, ...fields])])
@@ -146,7 +157,35 @@ export default function SearchQueryBuilderPage() {
     }
   };
 
-  const { isChatOpen } = useContext(ChatContext ?? true);
+  const handleClearQuery = () => {
+    setQuery({})
+    setSelectedFields([])
+    setJsonInput('')
+    setJsonError(null)
+    setSearchResults([])
+    setSelectedQueryHash(null)
+  }
+
+  useEffect(() => {
+    const fetchQueryHistory = async () => {
+      try {
+        const history = await getQueryHistory()
+        setQueryHistory(history)
+      } catch (error) {
+        console.error('Failed to fetch query history:', error)
+      }
+    }
+    fetchQueryHistory()
+  }, [])
+
+  const handleHistorySelect = (queryHash: string) => {
+    const selectedQuery = queryHistory.find(q => q.query_hash === queryHash)
+    if (selectedQuery) {
+      setQuery(selectedQuery.parameters)
+      setSelectedFields(Object.keys(selectedQuery.parameters) as (keyof PeopleSearchQueryParams)[])
+      setSelectedQueryHash(queryHash)
+    }
+  }
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -177,10 +216,6 @@ export default function SearchQueryBuilderPage() {
     },
   });
 
-  //useCopilotChatSuggestions({
-  //  instructions: "Suggest the most relevant next actions. In context of the current task. You are Agent that helps users find candidates. SO at the beginnig you should suggest Some job postions to search",
-  //});
-
   return (
       <div className={`flex-1 h-full transition-all duration-400 ${isChatOpen ? 'mr-[450px]' : 'mr-0'}`}>
         <div className="container mx-auto p-6 space-y-8">
@@ -191,13 +226,40 @@ export default function SearchQueryBuilderPage() {
                 <CardTitle className="text-2xl font-medium">Build Your Query</CardTitle>
                 <CardDescription className="text-gray-500">Add and configure search parameters</CardDescription>
               </div>
-              <Button 
-                onClick={() => setIsModalOpen(true)} 
-                className="bg-emerald-500 hover:bg-emerald-600 text-white"
-              >
-                <PlusCircleIcon className="mr-2 h-4 w-4" />
-                Add Search Query Fields
-              </Button>
+              <div>
+                <div className="flex justify-end items-center gap-2">
+                  <Button 
+                    onClick={handleClearQuery}
+                    variant="outline"
+                    className="w-[100px]"
+                  >
+                    New Query
+                  </Button>
+                  <Select value={selectedQueryHash || ''} onValueChange={handleHistorySelect}>
+                    <SelectTrigger className="w-[200px]">
+                      <SelectValue placeholder="Select from history" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {queryHistory.map((historyItem) => (
+                        <SelectItem key={historyItem.query_hash} value={historyItem.query_hash}>
+                          {Object.values(historyItem.parameters)
+                            .join(', ')
+                            .substring(0, 30)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <Button 
+                    onClick={() => setIsModalOpen(true)} 
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white w-[308px]"
+                  >
+                    <PlusCircleIcon className="mr-2 h-4 w-4" />
+                    Add Search Query Fields
+                  </Button>
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="p-6">
               <div className="space-y-4">

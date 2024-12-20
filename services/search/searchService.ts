@@ -6,10 +6,13 @@ import {
     recordUserQuery
 } from './searchCache';
 import { generateQueryHash } from './searchUtils';
+import { ProxycurlService } from '../proxycurl/proxycurlService';
+import { PeopleSearchQueryParams, PeopleSearchResponse } from '@/types/PersonSearch';
 
 export class SearchService {
     private userId: string;
     private projectId: string;
+    private proxycurlService: ProxycurlService;
 
     /**
      * @param userId - UUID of the user
@@ -24,6 +27,7 @@ export class SearchService {
         }
         this.userId = userId;
         this.projectId = projectId;
+        this.proxycurlService = new ProxycurlService();
     }
 
     private isValidUUID(uuid: string): boolean {
@@ -33,6 +37,8 @@ export class SearchService {
 
     async search(params: SearchParameters) {
         try {
+            console.log('SearchService.search called with params:', params);
+            
             // Check cache first
             const cacheResult = await findExistingQuery(params);
             const queryHash = generateQueryHash(params);
@@ -91,13 +97,22 @@ export class SearchService {
     }
 
     private async performSearch(params: SearchParameters): Promise<string[]> {
-        // TODO: Implement actual search logic here
-        // This should integrate with your existing search implementation
-        //throw new Error('Search implementation needed');
-        return [
-            "123e4567-e89b-12d3-a456-426614174000",
-            "123e4567-e89b-12d3-a456-426614174001",
-            "123e4567-e89b-12d3-a456-426614174002"
-        ];
+        try {
+            console.log('SearchService.performSearch called with params:', params);
+            
+            // Parse the query string back to an object
+            const searchParams = JSON.parse(params.query) as Partial<PeopleSearchQueryParams>;
+            console.log('Parsed search params:', searchParams);
+            
+            // Call Proxycurl API
+            const results = await this.proxycurlService.searchPeople(searchParams);
+            console.log('Proxycurl API results:', results);
+            
+            // Extract linkedin_profile_urls from results
+            return results.results.map(result => result.linkedin_profile_url);
+        } catch (error) {
+            console.error('Error in performSearch:', error);
+            throw error;
+        }
     }
 }

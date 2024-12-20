@@ -68,11 +68,14 @@ export async function createNewQuery(params: SearchParameters): Promise<string> 
     try {
         const queryHash = generateQueryHash(params);
         
+        // Parse the query string to JSON object
+        const queryParams = JSON.parse(params.query);
+        
         const { error } = await supabase
             .from('global_queries')
             .upsert({
                 query_hash: queryHash,
-                parameters: params,
+                parameters: queryParams,
                 current_version_number: 1,
                 updated_at: new Date().toISOString()
             }, {
@@ -160,5 +163,24 @@ export async function cleanupQueryVersions(queryHash: string): Promise<void> {
 
     if (error) {
         throw new Error(`Failed to cleanup query versions: ${error.message}`);
+    }
+}
+
+export async function getQueryHistory(): Promise<Array<{ query_hash: string, parameters: any }>> {
+    try {
+        const { data, error } = await supabase
+            .from('global_queries')
+            .select('query_hash, parameters')
+            .order('updated_at', { ascending: false })
+            .limit(10);
+
+        if (error) {
+            throw new Error(`Failed to fetch query history: ${error.message}`);
+        }
+
+        return data || [];
+    } catch (error) {
+        console.error('Error in getQueryHistory:', error);
+        throw error;
     }
 }
