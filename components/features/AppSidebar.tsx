@@ -65,7 +65,7 @@ export function AppSidebar() {
 
   if (isLoading) {
     return (
-      <Sidebar collapsible="icon">
+      <Sidebar collapsible="offcanvas">
         <AppSidebarHeader />
         <SidebarContent>
           <div className="flex items-center justify-center h-32">
@@ -77,7 +77,7 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="none">
       <AppSidebarHeader />
       <SidebarContent>
         <SidebarGroup>
@@ -94,9 +94,15 @@ export function AppSidebar() {
               onProjectSave={handleProjectSave}
               onProjectNameChange={setNewProjectName}
             />
-            <MenuItems />
+            
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupContent>
+          <MenuItems />
+          </SidebarGroupContent>
+        </SidebarGroup>
+        
       </SidebarContent>
 
       <FooterItems />

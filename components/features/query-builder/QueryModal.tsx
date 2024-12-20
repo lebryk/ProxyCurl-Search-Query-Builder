@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -20,6 +20,13 @@ interface QueryModalProps {
 
 export default function QueryModal({ isOpen, onClose, onAdd, selectedFields }: QueryModalProps) {
   const [selectedItems, setSelectedItems] = useState<Set<keyof PeopleSearchQueryParams>>(new Set(selectedFields))
+
+  // Update selectedItems when modal opens or selectedFields changes
+  useEffect(() => {
+    if (isOpen) {
+      setSelectedItems(new Set(selectedFields))
+    }
+  }, [isOpen, selectedFields])
 
   const handleCheckboxChange = (field: keyof PeopleSearchQueryParams) => {
     const newSelectedItems = new Set(selectedItems)

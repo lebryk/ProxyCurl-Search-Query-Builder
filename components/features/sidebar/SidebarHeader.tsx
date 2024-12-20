@@ -15,7 +15,7 @@ export function AppSidebarHeader() {
             className="h-4 object-contain"
           />
         </Link>
-        <SidebarTrigger />
+       
       </div>
     </SidebarHeader>
   );

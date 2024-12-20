@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from "next/font/google"
-import '../styles/globals.css'
-import { CopilotKit } from "@copilotkit/react-core"; 
-import { CopilotSidebar } from "@copilotkit/react-ui"; 
-import "@copilotkit/react-ui/styles.css"; 
+import '@/App/globals.css'
 import Providers from './providers'
 import { AppSidebar } from "@/components/features/AppSidebar";
 
@@ -28,17 +25,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased w-max`}>
+    <html lang="en" className="h-full">
+      <body className={`${geistSans.variable} ${geistMono.variable} h-screen flex flex-col font-sans antialiased`}>
         <Providers>
-          <CopilotKit runtimeUrl="/api/copilotkit" agent="research_canvas" textToSpeechUrl="/api/tts" transcribeAudioUrl="/api/transcribe"> 
-            <div className="flex h-screen overflow-hidden w-max">
+          <div className="flex flex-1 overflow-hidden">
+            <aside className="w-64 flex-shrink-0">
               <AppSidebar />
-              <main className="flex-1 overflow-y-auto w-max">
-                {children}
-              </main>
-            </div>
-          </CopilotKit>
+            </aside>
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
+          </div>
         </Providers>
       </body>
     </html>

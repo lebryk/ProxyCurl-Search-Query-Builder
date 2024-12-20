@@ -40,7 +40,7 @@ export const useSearchQuery = (projectId: string | undefined) => {
         .single();
 
       if (error) {
-        console.error("Error fetching search query:", error);
+        console.log("Error fetching search query:", error);
         return null;
       }
 

@@ -16,7 +16,11 @@ const serviceAdapter = new OpenAIAdapter();
         langsmithApiKey: env.LANGSMITH_API_KEY as string,
         agents: [{ 
           name: 'research_canvas', 
-          description: 'A Serach Qury Builder that helping search best candidates for job' 
+          description: 'A Serach Qury Builder that helping search best candidates for job'
+        },
+        { 
+          name: 'agent', 
+          description: 'A Serach Qury Builder that helping search best candidates for job #2'
         }]
       }),
     ],

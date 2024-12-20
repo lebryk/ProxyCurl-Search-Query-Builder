@@ -12,6 +12,42 @@ import { FilterIcon } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons"
 import { motion, AnimatePresence } from "framer-motion"
+import React from "react";
+import _ from "lodash";
+import RGL, { WidthProvider } from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
+
+const ReactGridLayout = WidthProvider(RGL);
+
+interface GridLayoutProps {
+  className?: string;
+  isDraggable?: boolean;
+  isResizable?: boolean;
+  items?: number;
+  cols?: number;
+  rowHeight?: number;
+  onLayoutChange?: (layout: any) => void;
+  y?: number;
+}
+
+class GridLayoutComponent extends React.PureComponent<GridLayoutProps> {
+  static defaultProps = {
+    className: "layout",
+    isDraggable: false,
+    isResizable: false,
+    items: 50,
+    cols: 3,
+    rowHeight: 10,
+    onLayoutChange: function() {}
+  };
+
+
+
+  onLayoutChange = (layout: any) => {
+    this.props.onLayoutChange?.(layout);
+  }
+}
 
 interface QueryInputsProps {
   selectedFields: (keyof PeopleSearchQueryParams)[]
@@ -23,11 +59,41 @@ interface QueryInputsProps {
 export default function QueryInputs({ selectedFields, query, updateQuery, onOpenBooleanBuilder }: QueryInputsProps) {
   const [validationErrors, setValidationErrors] = useState<Partial<Record<keyof PeopleSearchQueryParams, string>>>({})
   const [mounted, setMounted] = useState(false)
+  const [layout, setLayout] = useState<any[]>([])
 
   // Set mounted to true after initial render for animation
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Generate layout for the cards
+  useEffect(() => {
+    const groupedFields = selectedFields.reduce((acc, field) => {
+      const queryField = queryFields.find(f => f.name === field)
+      if (queryField) {
+        if (!acc[queryField.group]) {
+          acc[queryField.group] = []
+        }
+        acc[queryField.group].push(field)
+      }
+      return acc
+    }, {} as Record<string, (keyof PeopleSearchQueryParams)[]>)
+
+    // Create layout items for each group
+    const newLayout = Object.keys(groupedFields).map((group, index) => ({
+      i: group,
+      x: (index % 3),  // Position in one of three columns
+      y: Math.floor(index / 3) * 12,  // Increased vertical spacing between rows
+      w: 1,  // Each card takes 4 columns
+      h: Math.max((1 + 0.7), (groupedFields[group].length + 0.7 - (groupedFields[group].length * 0.1))) , // Increased height per field
+      minW: 1,
+      maxW: 1,
+      minH: (1 + 0.6),
+    }));
+
+
+    setLayout(newLayout);
+  }, [selectedFields]);
 
   const getFieldInfo = (fieldName: keyof PeopleSearchQueryParams) => {
     const field = queryFields.find(f => f.name === fieldName)
@@ -247,18 +313,35 @@ const validateField = (field: keyof PeopleSearchQueryParams, value: string) => {
 
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <AnimatePresence>
-          {Object.entries(groupedFields).map(([group, fields]) => (
+      <ReactGridLayout
+        className="layout"
+        layout={layout}
+        cols={3}
+        rowHeight={84}  // Decreased row height to make elements more compact
+        width={1200}
+        isDraggable={true}
+        isResizable={false}
+        compactType="vertical"
+        draggableHandle=".draggable-handle"
+        preventCollision={false}
+        margin={[16, 16]}
+        containerPadding={[0, 0]}
+        autoSize={true}
+        onLayoutChange={(newLayout) => {
+          setLayout(newLayout);
+        }}
+      >
+        {Object.entries(groupedFields).map(([group, fields]) => (
+          <div key={group} className="h-full">
             <motion.div
-              key={group}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
+              className="h-full"
             >
-              <Card>
-                <CardHeader className="bg-muted py-2">
+              <Card className="h-full">
+                <CardHeader className="bg-muted py-2 draggable-handle">
                   <CardTitle className="text-sm font-medium">{group}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-4">
@@ -293,9 +376,9 @@ const validateField = (field: keyof PeopleSearchQueryParams, value: string) => {
                 </CardContent>
               </Card>
             </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
+          </div>
+        ))}
+      </ReactGridLayout>
     </div>
   )
 }

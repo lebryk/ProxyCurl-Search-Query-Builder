@@ -117,79 +117,66 @@ const PeopleSearchQueryForm: React.FC<PeopleSearchQueryFormProps> = ({
   onQueryChange,
   defaultValues 
 }) => {
-  //console.log('PeopleSearchQueryForm rendered with defaultValues:', defaultValues);
-  
-  // Parse initial defaultValues
-  const [parsedDefaults, setParsedDefaults] = useState<z.infer<typeof formSchema> | null>(null);
-  
-  useEffect(() => {
-    if (defaultValues) {
-      formSchema.parseAsync(defaultValues)
-        .then(parsed => setParsedDefaults(parsed))
-        .catch(error => console.error('Error parsing initial default values:', error));
-    }
-  }, [defaultValues]);
-  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: parsedDefaults || {
+    defaultValues: defaultValues || {
       // Basic Info
-      country: undefined,
-      first_name: undefined,
-      last_name: undefined,
+      country: '',
+      first_name: '',
+      last_name: '',
       follower_count_min: undefined,
       follower_count_max: undefined,
-      region: undefined,
-      city: undefined,
-      headline: undefined,
-      summary: undefined,
+      region: '',
+      city: '',
+      headline: '',
+      summary: '',
       
       // Education
-      education_field_of_study: undefined,
-      education_degree_name: undefined,
-      education_school_name: undefined,
-      education_school_linkedin_profile_url: undefined,
+      education_field_of_study: [],
+      education_degree_name: [],
+      education_school_name: [],
+      education_school_linkedin_profile_url: '',
       
       // Role Info
-      current_role_title: undefined,
-      past_role_title: undefined,
-      current_role_before: undefined,
-      current_role_after: undefined,
-      current_job_description: undefined,
-      past_job_description: undefined,
+      current_role_title: [],
+      past_role_title: [],
+      current_role_before: '',
+      current_role_after: '',
+      current_job_description: '',
+      past_job_description: '',
       
       // Company Info
-      current_company_linkedin_profile_url: undefined,
-      past_company_linkedin_profile_url: undefined,
-      current_company_name: undefined,
-      past_company_name: undefined,
-      current_company_country: undefined,
-      current_company_region: undefined,
-      current_company_city: undefined,
+      current_company_linkedin_profile_url: '',
+      past_company_linkedin_profile_url: '',
+      current_company_name: '',
+      past_company_name: '',
+      current_company_country: '',
+      current_company_region: '',
+      current_company_city: '',
       current_company_type: undefined,
       current_company_follower_count_min: undefined,
       current_company_follower_count_max: undefined,
-      current_company_industry: undefined,
+      current_company_industry: [],
       current_company_employee_count_min: undefined,
       current_company_employee_count_max: undefined,
-      current_company_description: undefined,
+      current_company_description: '',
       current_company_founded_after_year: undefined,
       current_company_founded_before_year: undefined,
       current_company_funding_amount_min: undefined,
       current_company_funding_amount_max: undefined,
-      current_company_funding_raised_after: undefined,
-      current_company_funding_raised_before: undefined,
+      current_company_funding_raised_after: '',
+      current_company_funding_raised_before: '',
       
       // Other Info
-      linkedin_groups: undefined,
-      languages: undefined,
-      industries: undefined,
-      interests: undefined,
-      skills: undefined,
+      linkedin_groups: [],
+      languages: [],
+      industries: [],
+      interests: [],
+      skills: [],
       
       // Search Parameters
-      public_identifier_in_list: undefined,
-      public_identifier_not_in_list: undefined,
+      public_identifier_in_list: [],
+      public_identifier_not_in_list: [],
       page_size: undefined,
       enrich_profiles: undefined,
       use_cache: undefined,
@@ -198,19 +185,9 @@ const PeopleSearchQueryForm: React.FC<PeopleSearchQueryFormProps> = ({
 
   // Reset form when defaultValues change
   useEffect(() => {
-    const handleDefaultValues = async () => {
-      console.log('defaultValues changed:', defaultValues);
-      if (defaultValues) {
-        try {
-          console.log('Resetting form with values:', defaultValues);
-          const parsedValues = await formSchema.parseAsync(defaultValues);
-          form.reset(parsedValues);
-        } catch (error) {
-          console.error('Error parsing default values:', error);
-        }
-      }
-    };
-    handleDefaultValues();
+    if (defaultValues) {
+      form.reset(defaultValues);
+    }
   }, [defaultValues, form]);
 
   // Watch for form changes and update parent component

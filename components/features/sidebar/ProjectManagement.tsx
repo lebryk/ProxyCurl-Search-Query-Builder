@@ -55,7 +55,7 @@ export function ProjectManagement({
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-800/50 border-b border-border py-3">
+    <div className="bg-gray-100 border-border py-3 rounded-lg">
       <Accordion 
         type="single" 
         collapsible 
@@ -72,7 +72,7 @@ export function ProjectManagement({
             <div className="flex items-center gap-2 flex-1">
               <FolderOpen className="h-4 w-4 group-data-[state=closed]:hidden" />
               <Folder className="h-4 w-4 hidden group-data-[state=closed]:block" />
-              <span className="group-data-[state=collapsed]:hidden">Recruitment Projects</span>
+              <span className="group-data-[state=collapsed]:hidden">My Projects</span>
             </div>
             <div className="flex items-center gap-2">
               {state !== "collapsed" && (
