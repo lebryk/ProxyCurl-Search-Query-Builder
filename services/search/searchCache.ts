@@ -1,6 +1,8 @@
 import { SearchParameters, GlobalQuery, QueryVersion, CacheResult } from './searchTypes';
 import { generateQueryHash, isQueryVersionStale } from './searchUtils';
 import { createClient } from "@/utils/supabase/client";
+import { Json } from '@/types/supabase';
+import { PeopleSearchQueryParams } from '@/types/PersonSearch';
 
 const supabase = createClient();
 
@@ -166,19 +168,43 @@ export async function cleanupQueryVersions(queryHash: string): Promise<void> {
     }
 }
 
-export async function getQueryHistory(): Promise<Array<{ query_hash: string, parameters: any }>> {
+interface GlobalQueryResult {
+    parameters: PeopleSearchQueryParams;
+}
+
+export async function getQueryHistory(projectId: string): Promise<Array<{ query_hash: string, parameters: PeopleSearchQueryParams, executed_at: string }>> {
     try {
         const { data, error } = await supabase
-            .from('global_queries')
-            .select('query_hash, parameters')
-            .order('updated_at', { ascending: false })
-            .limit(10);
+            .from('user_queries_history')
+            .select(`
+                query_hash,
+                executed_at,
+                global_queries!inner (
+                    parameters
+                )
+            `)
+            .eq('project_id', projectId)
+            .order('executed_at', { ascending: false });
+        
+        console.log('>>>>>>Query history result:', data);
 
         if (error) {
             throw new Error(`Failed to fetch query history: ${error.message}`);
         }
 
-        return data || [];
+        // Filter to keep only the most recent execution for each query_hash
+        const uniqueQueries = data?.reduce((acc, item) => {
+            if (!acc.some(q => q.query_hash === item.query_hash)) {
+                acc.push({
+                    query_hash: item.query_hash,
+                    parameters: (item.global_queries as any).parameters as PeopleSearchQueryParams,
+                    executed_at: item.executed_at
+                });
+            }
+            return acc;
+        }, [] as Array<{ query_hash: string, parameters: PeopleSearchQueryParams, executed_at: string }>);
+
+        return (uniqueQueries || []).slice(0, 10);
     } catch (error) {
         console.error('Error in getQueryHistory:', error);
         throw error;

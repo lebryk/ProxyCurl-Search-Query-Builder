@@ -1,0 +1,7 @@
+export interface PeopleSearchQueryParams {
+  job_titles: string[];
+  skills: string[];
+  locations: string[];
+  min_experience: number;
+  max_experience: number;
+} 

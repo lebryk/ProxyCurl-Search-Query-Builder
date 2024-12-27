@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useProject } from "@/contexts/ProjectContext";
-import type { Candidate } from "@/types/candidate";
+import { SearchResult } from "@/types/PersonSearch";
 import { createClient } from "@/utils/supabase/client";
 
 const supabase = createClient();
@@ -25,48 +25,19 @@ export const useShortlistedCandidates = () => {
         if (!shortlistData?.length) return [];
 
         const candidateIds = shortlistData.map(item => item.candidate_id);
-        const { data: candidatesData, error: candidatesError } = await supabase
-          .from('candidates')
-          .select('*')
-          .in('id', candidateIds);
+        
+        // Call the get_profile_json RPC function with the candidate IDs
+        const { data: profilesData, error } = await supabase
+          .rpc('get_profile_json', {
+            p_profile_ids: candidateIds
+          });
 
-        if (candidatesError) {
-          console.error('Error fetching candidates:', candidatesError);
+        if (error) {
+          console.error('Error fetching profiles:', error);
           return [];
         }
 
-        return candidatesData.map(candidate => ({
-          id: candidate.id,
-          first_name: candidate.first_name,
-          last_name: candidate.last_name,
-          name: `${candidate.first_name} ${candidate.last_name}`,
-          title: candidate.current_position || 'Not specified',
-          company: candidate.current_company || 'Not specified',
-          location: candidate.location || 'Not specified',
-          experience: `${candidate.experience_years || 0} years`,
-          experience_years: candidate.experience_years || 0,
-          skills: candidate.skills || [],
-          education: (candidate.education || []).map((edu: any) => ({
-            institution: edu?.institution || '',
-            degree: edu?.degree || '',
-            field: edu?.field || '',
-            year: edu?.year || ''
-          })),
-          workHistory: (candidate.work_history || []).map((work: any) => ({
-            company: work?.company || '',
-            position: work?.position || '',
-            duration: work?.duration || '',
-            description: work?.description || ''
-          })),
-          languages: candidate.languages || [],
-          certifications: candidate.certifications || [],
-          summary: candidate.summary,
-          score: Math.floor(Math.random() * 40) + 60,
-          imageUrl: candidate.image_url || '/placeholder.svg',
-          contactInfo: candidate.email ? {
-            email: candidate.email
-          } : undefined
-        })) as Candidate[];
+        return profilesData.results as SearchResult[];
       },
       enabled: !!activeProject?.id,
       staleTime: Infinity, // Never mark data as stale automatically

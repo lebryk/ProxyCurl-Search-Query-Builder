@@ -7,6 +7,31 @@ export type Json =
   | Json[]
 
 export type Database = {
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          operationName?: string
+          query?: string
+          variables?: Json
+          extensions?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   public: {
     Tables: {
       candidates: {
@@ -315,7 +340,7 @@ export type Database = {
           first_name: string | null
           follower_count: number | null
           headline: string | null
-          id: string | null
+          id: string
           last_name: string | null
           occupation: string | null
           profile_pic_url: string | null
@@ -333,7 +358,7 @@ export type Database = {
           first_name?: string | null
           follower_count?: number | null
           headline?: string | null
-          id?: string | null
+          id: string
           last_name?: string | null
           occupation?: string | null
           profile_pic_url?: string | null
@@ -351,7 +376,7 @@ export type Database = {
           first_name?: string | null
           follower_count?: number | null
           headline?: string | null
-          id?: string | null
+          id?: string
           last_name?: string | null
           occupation?: string | null
           profile_pic_url?: string | null
@@ -363,31 +388,39 @@ export type Database = {
       profile_activity: {
         Row: {
           activity_status: string | null
-          id: number | null
+          id: number
           link: string | null
           profile_id: string | null
           title: string | null
         }
         Insert: {
           activity_status?: string | null
-          id?: number | null
+          id?: number
           link?: string | null
           profile_id?: string | null
           title?: string | null
         }
         Update: {
           activity_status?: string | null
-          id?: number | null
+          id?: number
           link?: string | null
           profile_id?: string | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_activity_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_article: {
         Row: {
           author: string | null
-          id: number | null
+          id: number
           image_url: string | null
           link: string | null
           profile_id: string | null
@@ -396,7 +429,7 @@ export type Database = {
         }
         Insert: {
           author?: string | null
-          id?: number | null
+          id?: number
           image_url?: string | null
           link?: string | null
           profile_id?: string | null
@@ -405,21 +438,29 @@ export type Database = {
         }
         Update: {
           author?: string | null
-          id?: number | null
+          id?: number
           image_url?: string | null
           link?: string | null
           profile_id?: string | null
           published_date?: number | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_article_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_certification: {
         Row: {
           authority: string | null
           display_source: string | null
           ends_at: number | null
-          id: number | null
+          id: number
           license_number: string | null
           name: string | null
           profile_id: string | null
@@ -430,7 +471,7 @@ export type Database = {
           authority?: string | null
           display_source?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: number
           license_number?: string | null
           name?: string | null
           profile_id?: string | null
@@ -441,30 +482,64 @@ export type Database = {
           authority?: string | null
           display_source?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: number
           license_number?: string | null
           name?: string | null
           profile_id?: string | null
           starts_at?: number | null
           url?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_certification_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profile_contacts: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profile_contacts_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_course: {
         Row: {
-          id: number | null
+          id: number
           name: string | null
           number: string | null
           profile_id: string | null
         }
         Insert: {
-          id?: number | null
+          id?: number
           name?: string | null
           number?: string | null
           profile_id?: string | null
         }
         Update: {
-          id?: number | null
+          id?: number
           name?: string | null
           number?: string | null
           profile_id?: string | null
@@ -479,7 +554,7 @@ export type Database = {
           ends_at: number | null
           field_of_study: string | null
           grade: string | null
-          id: number | null
+          id: number
           logo_url: string | null
           profile_id: string | null
           school: string | null
@@ -493,7 +568,7 @@ export type Database = {
           ends_at?: number | null
           field_of_study?: string | null
           grade?: string | null
-          id?: number | null
+          id?: never
           logo_url?: string | null
           profile_id?: string | null
           school?: string | null
@@ -507,7 +582,7 @@ export type Database = {
           ends_at?: number | null
           field_of_study?: string | null
           grade?: string | null
-          id?: number | null
+          id?: never
           logo_url?: string | null
           profile_id?: string | null
           school?: string | null
@@ -523,7 +598,7 @@ export type Database = {
           company_urn: string | null
           description: string | null
           ends_at: number | null
-          id: number | null
+          id: number
           location: string | null
           logo_url: string | null
           normalized_company: string | null
@@ -537,7 +612,7 @@ export type Database = {
           company_urn?: string | null
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           location?: string | null
           logo_url?: string | null
           normalized_company?: string | null
@@ -551,7 +626,7 @@ export type Database = {
           company_urn?: string | null
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           location?: string | null
           logo_url?: string | null
           normalized_company?: string | null
@@ -563,21 +638,21 @@ export type Database = {
       }
       profile_group: {
         Row: {
-          id: number | null
+          id: number
           name: string | null
           profile_id: string | null
           profile_pic_url: string | null
           url: string | null
         }
         Insert: {
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           profile_pic_url?: string | null
           url?: string | null
         }
         Update: {
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           profile_pic_url?: string | null
@@ -588,7 +663,7 @@ export type Database = {
       profile_honour_award: {
         Row: {
           description: string | null
-          id: number | null
+          id: number
           issued_on: number | null
           issuer: string | null
           profile_id: string | null
@@ -596,7 +671,7 @@ export type Database = {
         }
         Insert: {
           description?: string | null
-          id?: number | null
+          id?: never
           issued_on?: number | null
           issuer?: string | null
           profile_id?: string | null
@@ -604,29 +679,37 @@ export type Database = {
         }
         Update: {
           description?: string | null
-          id?: number | null
+          id?: never
           issued_on?: number | null
           issuer?: string | null
           profile_id?: string | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_honour_award_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_language: {
         Row: {
-          id: number | null
+          id: number
           name: string | null
           proficiency: string | null
           profile_id: string | null
         }
         Insert: {
-          id?: number | null
+          id?: never
           name?: string | null
           proficiency?: string | null
           profile_id?: string | null
         }
         Update: {
-          id?: number | null
+          id?: never
           name?: string | null
           proficiency?: string | null
           profile_id?: string | null
@@ -637,7 +720,7 @@ export type Database = {
         Row: {
           description: string | null
           ends_at: number | null
-          id: number | null
+          id: number
           name: string | null
           profile_id: string | null
           starts_at: number | null
@@ -646,7 +729,7 @@ export type Database = {
         Insert: {
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           starts_at?: number | null
@@ -655,7 +738,7 @@ export type Database = {
         Update: {
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           starts_at?: number | null
@@ -664,14 +747,20 @@ export type Database = {
         Relationships: []
       }
       profile_patent: {
-        Row: {}
-        Insert: {}
-        Update: {}
+        Row: {
+          id: number
+        }
+        Insert: {
+          id?: never
+        }
+        Update: {
+          id?: never
+        }
         Relationships: []
       }
       profile_people_also_viewed: {
         Row: {
-          id: number | null
+          id: number
           link: string | null
           location: string | null
           name: string | null
@@ -679,7 +768,7 @@ export type Database = {
           summary: string | null
         }
         Insert: {
-          id?: number | null
+          id?: never
           link?: string | null
           location?: string | null
           name?: string | null
@@ -687,7 +776,7 @@ export type Database = {
           summary?: string | null
         }
         Update: {
-          id?: number | null
+          id?: never
           link?: string | null
           location?: string | null
           name?: string | null
@@ -700,7 +789,7 @@ export type Database = {
         Row: {
           description: string | null
           ends_at: number | null
-          id: number | null
+          id: number
           profile_id: string | null
           starts_at: number | null
           title: string | null
@@ -709,7 +798,7 @@ export type Database = {
         Insert: {
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           profile_id?: string | null
           starts_at?: number | null
           title?: string | null
@@ -718,18 +807,26 @@ export type Database = {
         Update: {
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           profile_id?: string | null
           starts_at?: number | null
           title?: string | null
           url?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_project_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_publication: {
         Row: {
           description: string | null
-          id: number | null
+          id: number
           name: string | null
           profile_id: string | null
           published_on: number | null
@@ -738,7 +835,7 @@ export type Database = {
         }
         Insert: {
           description?: string | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           published_on?: number | null
@@ -747,7 +844,7 @@ export type Database = {
         }
         Update: {
           description?: string | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           published_on?: number | null
@@ -759,24 +856,24 @@ export type Database = {
       profile_recommendation: {
         Row: {
           content: string | null
-          id: number | null
+          id: number
           profile_id: string | null
         }
         Insert: {
           content?: string | null
-          id?: number | null
+          id?: never
           profile_id?: string | null
         }
         Update: {
           content?: string | null
-          id?: number | null
+          id?: never
           profile_id?: string | null
         }
         Relationships: []
       }
       profile_similar_named: {
         Row: {
-          id: number | null
+          id: number
           link: string | null
           location: string | null
           name: string | null
@@ -784,7 +881,7 @@ export type Database = {
           summary: string | null
         }
         Insert: {
-          id?: number | null
+          id?: never
           link?: string | null
           location?: string | null
           name?: string | null
@@ -792,7 +889,7 @@ export type Database = {
           summary?: string | null
         }
         Update: {
-          id?: number | null
+          id?: never
           link?: string | null
           location?: string | null
           name?: string | null
@@ -805,7 +902,7 @@ export type Database = {
         Row: {
           date_on: number | null
           description: string | null
-          id: number | null
+          id: number
           name: string | null
           profile_id: string | null
           score: string | null
@@ -813,7 +910,7 @@ export type Database = {
         Insert: {
           date_on?: number | null
           description?: string | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           score?: string | null
@@ -821,7 +918,7 @@ export type Database = {
         Update: {
           date_on?: number | null
           description?: string | null
-          id?: number | null
+          id?: never
           name?: string | null
           profile_id?: string | null
           score?: string | null
@@ -836,7 +933,7 @@ export type Database = {
           company_urn: string | null
           description: string | null
           ends_at: number | null
-          id: number | null
+          id: number
           logo_url: string | null
           profile_id: string | null
           starts_at: number | null
@@ -849,7 +946,7 @@ export type Database = {
           company_urn?: string | null
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           logo_url?: string | null
           profile_id?: string | null
           starts_at?: number | null
@@ -862,13 +959,21 @@ export type Database = {
           company_urn?: string | null
           description?: string | null
           ends_at?: number | null
-          id?: number | null
+          id?: never
           logo_url?: string | null
           profile_id?: string | null
           starts_at?: number | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profile_volunteering_experience_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profiles: {
         Row: {
@@ -1047,33 +1152,51 @@ export type Database = {
           candidate_id: string
           completed_at: string | null
           created_at: string
+          email_sent_at: string | null
+          email_status: string | null
           id: string
+          last_accessed_at: string | null
           project_id: string
           sent_at: string
           status: string
+          submission_count: number | null
+          survey_status: string | null
           template_id: string
+          unique_token: string | null
           updated_at: string
         }
         Insert: {
           candidate_id: string
           completed_at?: string | null
           created_at?: string
+          email_sent_at?: string | null
+          email_status?: string | null
           id?: string
+          last_accessed_at?: string | null
           project_id: string
           sent_at?: string
           status?: string
+          submission_count?: number | null
+          survey_status?: string | null
           template_id: string
+          unique_token?: string | null
           updated_at?: string
         }
         Update: {
           candidate_id?: string
           completed_at?: string | null
           created_at?: string
+          email_sent_at?: string | null
+          email_status?: string | null
           id?: string
+          last_accessed_at?: string | null
           project_id?: string
           sent_at?: string
           status?: string
+          submission_count?: number | null
+          survey_status?: string | null
           template_id?: string
+          unique_token?: string | null
           updated_at?: string
         }
         Relationships: [
@@ -1081,7 +1204,7 @@ export type Database = {
             foreignKeyName: "sent_surveys_candidate_id_fkey"
             columns: ["candidate_id"]
             isOneToOne: false
-            referencedRelation: "candidates"
+            referencedRelation: "profile"
             referencedColumns: ["id"]
           },
           {
@@ -1124,7 +1247,7 @@ export type Database = {
             foreignKeyName: "shortlisted_candidates_candidate_id_fkey"
             columns: ["candidate_id"]
             isOneToOne: false
-            referencedRelation: "candidates"
+            referencedRelation: "profile"
             referencedColumns: ["id"]
           },
           {
@@ -1159,13 +1282,6 @@ export type Database = {
           responses?: Json
         }
         Relationships: [
-          {
-            foreignKeyName: "survey_responses_candidate_id_fkey"
-            columns: ["candidate_id"]
-            isOneToOne: false
-            referencedRelation: "candidates"
-            referencedColumns: ["id"]
-          },
           {
             foreignKeyName: "survey_responses_project_id_fkey"
             columns: ["project_id"]
@@ -1266,7 +1382,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_profile_json: {
+        Args: {
+          p_profile_ids: string[]
+        }
+        Returns: Json
+      }
+      insert_profiles: {
+        Args: {
+          profiles: Json
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       company_role: "owner" | "admin" | "member"

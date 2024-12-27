@@ -8,6 +8,9 @@ import {
 import { generateQueryHash } from './searchUtils';
 import { ProxycurlService } from '../proxycurl/proxycurlService';
 import { PeopleSearchQueryParams, PeopleSearchResponse } from '@/types/PersonSearch';
+import { createClient } from "@/utils/supabase/client";
+
+const supabase = createClient();
 
 export class SearchService {
     private userId: string;
@@ -106,10 +109,20 @@ export class SearchService {
             
             // Call Proxycurl API
             const results = await this.proxycurlService.searchPeople(searchParams);
-            console.log('Proxycurl API results:', results);
+            console.log('!!!Proxycurl API results:', results);
             
+            
+            // Check if results are empty
+                
+            // Insert profiles into Supabase
+            const { data: insertData, error } = await supabase.rpc('insert_profiles', { profiles: results });
+            if (error) {
+                console.log('Error inserting profiles into Supabase:', error);
+            }
+            console.log('Inserted profiles into Supabase:', insertData);
+             console.log('Inserted profiles into Supabase:')
             // Extract linkedin_profile_urls from results
-            return results.results.map(result => result.linkedin_profile_url);
+            return results.results.map(result => result.profile?.public_identifier ?? result.linkedin_profile_url.replace('https://www.linkedin.com/in/', ''));
         } catch (error) {
             console.error('Error in performSearch:', error);
             throw error;

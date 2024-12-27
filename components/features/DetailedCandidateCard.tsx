@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Building, Clock, Trash2, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, removeEmojis } from "@/lib/utils";
 
 interface DetailedCandidateCardProps {
   id: string;
@@ -35,6 +35,13 @@ export const DetailedCandidateCard = ({
   onClick,
   aiSummary
 }: DetailedCandidateCardProps) => {
+  const initials = removeEmojis(name)
+    .split(" ")
+    .map(n => n[0])
+    .filter(Boolean)
+    .join("")
+    .toUpperCase();
+
   return (
     <Card 
       className={cn(
@@ -59,8 +66,8 @@ export const DetailedCandidateCard = ({
       <CardHeader className="flex flex-row items-start gap-4 pb-3">
         <Avatar className="h-16 w-16 ring-2 ring-primary/5 group-hover:ring-primary/20 transition-all">
           <AvatarImage src={imageUrl} alt={name} />
-          <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/30 text-primary font-medium">
-            {name.split(" ").map(n => n[0]).join("")}
+          <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/30 text-primary font-medium text-lg">
+            {initials || '?'}
           </AvatarFallback>
         </Avatar>
 

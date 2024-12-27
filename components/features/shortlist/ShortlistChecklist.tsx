@@ -2,11 +2,11 @@ import { Check, FileText, Building, Users, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from 'react';
-import type { Candidate } from "@/types/candidate";
+import { SearchResult } from "@/types/PersonSearch";
 import { EnrichCandidateDialog } from './EnrichCandidateDialog';
 
 interface ShortlistChecklistProps {
-  candidates: Candidate[];
+  candidates: SearchResult[];
 }
 
 interface SubTask {
@@ -101,7 +101,9 @@ export function ShortlistChecklist({ candidates }: ShortlistChecklistProps) {
                           onCheckedChange={(checked) => handleTaskChange(subtask.id, checked as boolean)}
                           checked={selectedTasks.includes(subtask.id)}
                         />
-                        <div className="absolute inset-0 -z-10 rounded-[4px] bg-indigo-50 opacity-0 transition-opacity group-hover:opacity-100" />
+                        <div className="absolute right-0 top-0 -mr-1 -mt-1 h-3 w-3 rounded-full bg-primary opacity-0 transition-opacity group-hover:opacity-100">
+                          <Check className="h-3 w-3 stroke-[4] text-white" />
+                        </div>
                       </div>
                       <label
                         htmlFor={subtask.id}
@@ -118,23 +120,22 @@ export function ShortlistChecklist({ candidates }: ShortlistChecklistProps) {
         </div>
       </div>
 
-      <div className="sticky bottom-0 border-t bg-background p-4">
+      <div className="border-t p-6">
         <Button 
-          size="lg"
-          className="w-full gap-2.5 bg-indigo-600 text-sm font-medium text-white hover:bg-indigo-600/90"
-          onClick={() => setShowEnrichDialog(true)}
+          className="w-full"
+          variant="default"
           disabled={selectedTasks.length === 0}
+          onClick={() => setShowEnrichDialog(true)}
         >
-          <FileText className="h-5 w-5" />
-          Enrich Candidate
+          Start Research ({selectedTasks.length})
         </Button>
       </div>
 
-      <EnrichCandidateDialog
-        open={showEnrichDialog}
+      <EnrichCandidateDialog 
+        isOpen={showEnrichDialog}
         onOpenChange={setShowEnrichDialog}
-        tasks={getSelectedTaskLabels()}
         candidates={candidates}
+        selectedTasks={getSelectedTaskLabels()}
       />
     </div>
   );

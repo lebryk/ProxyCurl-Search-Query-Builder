@@ -1,21 +1,8 @@
 import { CandidateCard } from "@/components/features/CandidateCard";
-
-interface Candidate {
-  id: string;
-  name: string;
-  title: string;
-  company: string;
-  location: string;
-  experience: string;
-  skills: string[];
-  score: number;
-  imageUrl?: string;
-  isShortlisted?: boolean;
-  aiSummary?: string;
-}
+import { SearchResult } from "@/types/PersonSearch";
 
 interface SearchResultsListProps {
-  candidates: Candidate[];
+  candidates: SearchResult[];
   selectedCandidates: string[];
   onCandidateSelect: (id: string) => void;
   onProfileClick: (id: string) => void;
@@ -33,23 +20,39 @@ export const SearchResultsList = ({
         Found {candidates?.length || 0} matching candidates
       </h2>
       <div className="grid grid-cols-2 gap-4">
-        {candidates?.map((candidate) => (
-          <CandidateCard 
-            key={candidate.id}
-            id={candidate.id}
-            name={candidate.name}
-            title={candidate.title}
-            company={candidate.company}
-            location={candidate.location}
-            skills={candidate.skills}
-            score={candidate.score}
-            imageUrl={candidate.imageUrl}
-            isSelected={selectedCandidates.includes(candidate.id)}
-            onSelect={onCandidateSelect}
-            onClick={() => onProfileClick(candidate.id)}
-            aiSummary={candidate.aiSummary}
-          />
-        ))}
+        {candidates?.map((result) => {
+          const profile = result.profile;
+          if (!profile) return null;
+
+          // Extract current experience if available
+          const currentExperience = profile.experiences?.[0];
+          
+          console.log("Rendering candidate card:", {
+            public_identifier: profile.public_identifier,
+            name: profile.full_name || `${profile.first_name || ''} ${profile.last_name || ''}`.trim()
+          });
+          
+          return (
+            <CandidateCard 
+              key={profile.public_identifier}
+              id={profile.public_identifier}
+              name={profile.full_name || `${profile.first_name || ''} ${profile.last_name || ''}`.trim()}
+              title={profile.headline || currentExperience?.title || 'Not specified'}
+              company={currentExperience?.company || 'Not specified'}
+              location={profile.city ? `${profile.city}, ${profile.country || ''}` : profile.country || 'Not specified'}
+              skills={[]} // Skills are not directly available in the profile
+              score={75} // Default score since it's not in the profile
+              imageUrl={profile.profile_pic_url || undefined}
+              isSelected={selectedCandidates.includes(profile.public_identifier)}
+              onSelect={onCandidateSelect}
+              onClick={() => {
+                console.log("Card clicked, calling onProfileClick with:", profile.public_identifier);
+                onProfileClick(profile.public_identifier);
+              }}
+              aiSummary={profile.summary || undefined}
+            />
+          );
+        })}
       </div>
     </div>
   );

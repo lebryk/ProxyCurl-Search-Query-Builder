@@ -1,4 +1,4 @@
-import type { Json } from "@/integrations/supabase/types";
+import type { Json } from "@/types/supabase";
 
 export interface SurveyQuestion {
   id: string;

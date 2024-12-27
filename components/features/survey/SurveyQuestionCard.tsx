@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,12 +19,17 @@ interface Props {
   question: SurveyQuestion;
   onUpdate: (question: SurveyQuestion) => void;
   onDelete: (id: string) => void;
+  dragHandleProps?: Record<string, any>;
 }
 
-export function SurveyQuestionCard({ question, onUpdate, onDelete }: Props) {
+export function SurveyQuestionCard({ question, onUpdate, onDelete, dragHandleProps }: Props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedQuestion, setEditedQuestion] = useState(question);
   const [newOption, setNewOption] = useState("");
+
+  useEffect(() => {
+    setEditedQuestion(question);
+  }, [question]);
 
   const handleSave = () => {
     onUpdate(editedQuestion);
@@ -52,7 +57,10 @@ export function SurveyQuestionCard({ question, onUpdate, onDelete }: Props) {
 
   return (
     <Card className="relative group">
-      <div className="absolute left-2 top-1/2 -translate-y-1/2 cursor-move opacity-0 group-hover:opacity-50">
+      <div 
+        className="absolute left-2 top-1/2 -translate-y-1/2 cursor-move opacity-0 group-hover:opacity-50"
+        {...dragHandleProps}
+      >
         <GripVertical className="w-4 h-4" />
       </div>
       <CardContent className="p-4 pl-8">
@@ -67,26 +75,34 @@ export function SurveyQuestionCard({ question, onUpdate, onDelete }: Props) {
                   placeholder="Enter question text..."
                 />
               </div>
-              <Select
-                value={editedQuestion.type}
-                onValueChange={(value: SurveyQuestion['type']) => 
-                  setEditedQuestion({ 
-                    ...editedQuestion, 
-                    type: value,
-                    options: value === 'multiple_choice' ? [] : undefined 
-                  })
-                }
-              >
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Question type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="likert">Likert Scale</SelectItem>
-                  <SelectItem value="multiple_choice">Multiple Choice</SelectItem>
-                  <SelectItem value="scenario">Scenario</SelectItem>
-                  <SelectItem value="open_ended">Open Ended</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="space-y-2">
+                <Input
+                  value={editedQuestion.category}
+                  onChange={(e) => setEditedQuestion({ ...editedQuestion, category: e.target.value })}
+                  placeholder="Category"
+                  className="w-[180px]"
+                />
+                <Select
+                  value={editedQuestion.type}
+                  onValueChange={(value: SurveyQuestion['type']) => 
+                    setEditedQuestion({ 
+                      ...editedQuestion, 
+                      type: value,
+                      options: value === 'multiple_choice' ? [] : undefined 
+                    })
+                  }
+                >
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Question type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="likert">Likert Scale</SelectItem>
+                    <SelectItem value="multiple_choice">Multiple Choice</SelectItem>
+                    <SelectItem value="scenario">Scenario</SelectItem>
+                    <SelectItem value="open_ended">Open Ended</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {editedQuestion.type === 'multiple_choice' && (
@@ -139,6 +155,11 @@ export function SurveyQuestionCard({ question, onUpdate, onDelete }: Props) {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
                 <p className="text-sm font-medium">{question.question}</p>
+                {question.category && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Category: {question.category}
+                  </p>
+                )}
                 {question.options && (
                   <div className="mt-2 space-y-1">
                     {question.options.map((option, index) => (

@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
-import type { Candidate } from "@/types/candidate";
+import { SearchResult } from "@/types/PersonSearch";
 
 interface EnrichCandidateDialogProps {
-  open: boolean;
+  isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  tasks: string[];
-  candidates: Candidate[];
+  selectedTasks: string[];
+  candidates: SearchResult[];
 }
 
 export function EnrichCandidateDialog({
-  open,
+  isOpen,
   onOpenChange,
-  tasks,
+  selectedTasks,
   candidates,
 }: EnrichCandidateDialogProps) {
   const [progress, setProgress] = useState(0);
@@ -21,14 +21,14 @@ export function EnrichCandidateDialog({
   const [currentCandidate, setCurrentCandidate] = useState(0);
 
   useEffect(() => {
-    if (!open) {
+    if (!isOpen) {
       setProgress(0);
       setCurrentTask(0);
       setCurrentCandidate(0);
       return;
     }
 
-    const totalSteps = tasks.length * candidates.length;
+    const totalSteps = selectedTasks.length * candidates.length;
     const stepSize = 100 / totalSteps;
 
     const interval = setInterval(() => {
@@ -43,8 +43,8 @@ export function EnrichCandidateDialog({
         
         // Calculate current task and candidate based on progress
         const completedSteps = Math.floor((prev / 100) * totalSteps);
-        const newTaskIndex = completedSteps % tasks.length;
-        const newCandidateIndex = Math.floor(completedSteps / tasks.length);
+        const newTaskIndex = completedSteps % selectedTasks.length;
+        const newCandidateIndex = Math.floor(completedSteps / selectedTasks.length);
         
         if (newTaskIndex !== currentTask || newCandidateIndex !== currentCandidate) {
           setCurrentTask(newTaskIndex);
@@ -56,10 +56,16 @@ export function EnrichCandidateDialog({
     }, 100);
 
     return () => clearInterval(interval);
-  }, [open, tasks.length, candidates.length, onOpenChange]);
+  }, [isOpen, selectedTasks.length, candidates.length, onOpenChange]);
+
+  const getCurrentCandidateName = () => {
+    const candidate = candidates[currentCandidate]?.profile;
+    if (!candidate) return 'Unknown';
+    return candidate.full_name || `${candidate.first_name || ''} ${candidate.last_name || ''}`.trim() || 'Unknown';
+  };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Enriching candidate profiles</DialogTitle>
@@ -68,11 +74,11 @@ export function EnrichCandidateDialog({
           <Progress value={progress} className="w-full" />
           <div className="space-y-2">
             <div className="text-sm font-medium">
-              Candidate {currentCandidate + 1} of {candidates.length}: {candidates[currentCandidate]?.name}
+              Candidate {currentCandidate + 1} of {candidates.length}: {getCurrentCandidateName()}
             </div>
             <div className="text-sm text-muted-foreground">
-              {currentTask < tasks.length && currentCandidate < candidates.length ? (
-                <>Working on: {tasks[currentTask]}</>
+              {currentTask < selectedTasks.length && currentCandidate < candidates.length ? (
+                <>Working on: {selectedTasks[currentTask]}</>
               ) : (
                 <>Completed all tasks!</>
               )}

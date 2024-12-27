@@ -81,19 +81,8 @@ export async function GET(request: Request) {
             );
         }
 
-        // Transform response
-        const transformedResponse = {
-            total_result_count: data.total_result_count || 0,
-            results: data.results?.map((result: any) => ({
-                linkedin_profile_url: result.linkedin_profile_url,
-                profile: result.profile || {
-                    full_name: result.name
-                }
-            })) || []
-        };
 
-        debugLog('Transformed response:', transformedResponse);
-        return NextResponse.json(transformedResponse);
+        return NextResponse.json(data);
     } catch (error) {
         debugLog('Error in API route:', error);
         return NextResponse.json(

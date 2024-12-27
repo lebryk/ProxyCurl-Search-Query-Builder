@@ -94,10 +94,10 @@ export function SurveyPreview({ questions, onSubmit }: Props) {
                 onValueChange={(value) => handleAnswer(question.id, value)}
                 className="space-y-3"
               >
-                {question.options.map((option, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <RadioGroupItem value={option} id={`${question.id}-${index}`} />
-                    <Label htmlFor={`${question.id}-${index}`}>{option}</Label>
+                {question.options.map((option) => (
+                  <div key={`${question.id}-${option}`} className="flex items-center space-x-3">
+                    <RadioGroupItem value={option} id={`${question.id}-${option}`} />
+                    <Label htmlFor={`${question.id}-${option}`}>{option}</Label>
                   </div>
                 ))}
               </RadioGroup>

@@ -1,41 +1,48 @@
-import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Building, MapPin } from "lucide-react";
-import type { Candidate } from "@/types/candidate";
+import { Building2, MapPin } from "lucide-react";
+import { CandidateAvatar } from "../candidate/CandidateAvatar";
+import { Badge } from "@/components/ui/badge";
+import { SearchResult } from "@/types/PersonSearch";
 
 interface ProfileHeaderProps {
-  candidate: Candidate;
+  candidate: SearchResult;
 }
 
-export const ProfileHeader = ({ candidate }: ProfileHeaderProps) => {
+export function ProfileHeader({ candidate }: ProfileHeaderProps) {
+  const profile = candidate.profile;
+  if (!profile) return null;
+
+  const currentExperience = profile.experiences?.[0];
+
   return (
-    <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6">
-      <DialogHeader>
-        <DialogTitle className="sr-only">Candidate Profile</DialogTitle>
-        <DialogDescription className="sr-only">
-          Detailed information about {candidate.name}, including their professional background, contact details, and skills.
-        </DialogDescription>
-        <div className="flex items-start gap-6">
-          <Avatar className="w-24 h-24 border-4 border-white/20">
-            <AvatarImage src={candidate.imageUrl} alt={candidate.name} />
-            <AvatarFallback className="text-2xl">{candidate.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-          </Avatar>
-          <div className="flex-1 space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">{candidate.name}</h2>
-            <p className="text-xl text-white/90">{candidate.title}</p>
-            <div className="flex items-center gap-4 text-white/80 text-sm">
+    <div className="p-6 bg-white border-b space-y-4">
+      <div className="flex items-start gap-4">
+        <CandidateAvatar
+          name={`${profile.first_name || ''} ${profile.last_name || ''}`}
+          imageUrl={profile.profile_pic_url || undefined}
+          className="h-16 w-16"
+        />
+        <div className="flex-1 min-w-0">
+          <h2 className="text-xl font-semibold text-gray-900">
+            {profile.first_name} {profile.last_name}
+          </h2>
+          <p className="text-gray-600">{profile.headline || currentExperience?.title || 'Not specified'}</p>
+          
+          <div className="flex flex-wrap gap-x-4 gap-y-2 mt-2 text-sm text-gray-500">
+            {currentExperience?.company && (
               <div className="flex items-center gap-1">
-                <Building className="w-4 h-4" />
-                <span>{candidate.company}</span>
+                <Building2 className="h-4 w-4" />
+                <span>{currentExperience.company}</span>
               </div>
+            )}
+            {profile.city && (
               <div className="flex items-center gap-1">
-                <MapPin className="w-4 h-4" />
-                <span>{candidate.location}</span>
+                <MapPin className="h-4 w-4" />
+                <span>{profile.city}{profile.country ? `, ${profile.country}` : ''}</span>
               </div>
-            </div>
+            )}
           </div>
         </div>
-      </DialogHeader>
+      </div>
     </div>
   );
-};
+}

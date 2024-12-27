@@ -3,12 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import type { Candidate } from "@/types/candidate";
+import { SearchResult } from "@/types/PersonSearch";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { removeEmojis } from "@/lib/utils";
+import type { SurveyTemplate } from "@/types/survey";
 
 interface SendSurveyDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  candidates: Candidate[];
+  candidates: SearchResult[];
   selectedCandidates: string[];
   onCandidateSelect: (candidateId: string, checked: boolean) => void;
   onSend: () => void;
@@ -30,37 +33,54 @@ export function SendSurveyDialog({
         <DialogHeader>
           <DialogTitle>Send Survey to Candidates</DialogTitle>
           <DialogDescription>
-            Select candidates to send this survey to
+            Select candidates to send the survey to
           </DialogDescription>
         </DialogHeader>
         <div className="py-4">
-          <Label className="text-sm font-medium">Select candidates to send the survey:</Label>
+          <Label className="text-sm font-medium">Select candidates:</Label>
           <ScrollArea className="h-[300px] mt-2">
-            {candidates.map((candidate) => (
-              <div key={candidate.id} className="flex items-center space-x-2 py-2">
-                <Checkbox
-                  id={candidate.id}
-                  checked={selectedCandidates.includes(candidate.id)}
-                  onCheckedChange={(checked) => {
-                    onCandidateSelect(candidate.id, !!checked);
-                  }}
-                />
-                <Label htmlFor={candidate.id} className="flex-1">
-                  <div>{candidate.name}</div>
-                  <div className="text-sm text-gray-500">{candidate.title} at {candidate.company}</div>
-                </Label>
-              </div>
-            ))}
-            {candidates.length === 0 && (
-              <div className="text-center text-gray-500 py-4">
-                No shortlisted candidates found
-              </div>
-            )}
+            <div className="space-y-4">
+              {candidates.map((result) => {
+                const profile = result.profile;
+                if (!profile?.public_identifier) return null;
+
+                return (
+                  <div key={profile.public_identifier} className="flex items-center space-x-4">
+                    <Checkbox
+                      id={profile.public_identifier}
+                      checked={selectedCandidates.includes(profile.public_identifier)}
+                      onCheckedChange={(checked) => 
+                        onCandidateSelect(profile.public_identifier, checked as boolean)
+                      }
+                    />
+                    <div className="flex items-center space-x-3">
+                      <Avatar className="h-10 w-10 ring-2 ring-primary/5">
+                        <AvatarImage src={profile.profile_pic_url || undefined} alt={`${profile.first_name} ${profile.last_name}`} />
+                        <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/30 text-primary font-medium">
+                          {removeEmojis(`${profile.first_name} ${profile.last_name}`)
+                            .split(" ")
+                            .map(n => n[0])
+                            .filter(Boolean)
+                            .join("")
+                            .toUpperCase() || '?'}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h4 className="text-sm font-medium leading-none">{`${profile.first_name} ${profile.last_name}`}</h4>
+                        <p className="text-sm text-gray-500">{profile.headline || 'No headline'}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </ScrollArea>
         </div>
-        <div className="flex justify-end gap-2">
-          <Button variant="outline" onClick={onCancel}>Cancel</Button>
-          <Button 
+        <div className="flex justify-end gap-4">
+          <Button variant="outline" onClick={onCancel}>
+            Cancel
+          </Button>
+          <Button
             onClick={onSend}
             disabled={selectedCandidates.length === 0}
           >

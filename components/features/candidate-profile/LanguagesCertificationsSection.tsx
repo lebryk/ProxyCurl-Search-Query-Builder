@@ -41,9 +41,9 @@ export const LanguagesCertificationsSection = ({
             <h3 className="text-lg font-semibold text-gray-900">Certifications</h3>
           </div>
           <div className="space-y-2">
-            {certifications.map((cert) => (
+            {certifications.map((cert, index) => (
               <div 
-                key={cert}
+                key={`${cert}-${index}`}
                 className="text-sm text-gray-600 flex items-center gap-2"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />

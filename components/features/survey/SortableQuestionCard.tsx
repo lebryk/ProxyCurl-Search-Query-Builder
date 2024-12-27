@@ -31,16 +31,12 @@ export function SortableQuestionCard({ question, onUpdate, onDelete }: Props) {
   };
 
   return (
-    <div 
-      ref={setNodeRef}
-      style={style}
-      {...attributes}
-      {...listeners}
-    >
+    <div ref={setNodeRef} style={style}>
       <SurveyQuestionCard
         question={question}
         onUpdate={onUpdate}
         onDelete={onDelete}
+        dragHandleProps={{...attributes, ...listeners}}
       />
     </div>
   );

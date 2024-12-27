@@ -16,7 +16,7 @@ export class ProxycurlService {
             // Set default parameters while allowing overrides
             const finalParams = {
                 page_size: '2',  // Increase default page size
-                enrich_profiles: 'skip',  // Get full profile data
+                enrich_profiles: 'enrich',  // Get full profile data
                 use_cache: 'if-present',
                 ...queryParams  // Allow overriding defaults with provided params
             };
