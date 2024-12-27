@@ -1,92 +1,96 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 
 const API_ENDPOINT = 'https://nubela.co/proxycurl/api/v2/search/person/';
 
-// Debug logging function
-function debugLog(...args: any[]) {
-    // Log to console
-    console.log(...args);
-    
-    // Also log to a file for debugging
-    const logPath = path.join(process.cwd(), 'proxycurl-debug.log');
-    const logMessage = new Date().toISOString() + ' - ' + args.map(arg => 
-        typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
-    ).join(' ') + '\n';
-    
-    fs.appendFileSync(logPath, logMessage);
+// Simple console logging function
+function log(...args: any[]) {
+    if (process.env.NODE_ENV === 'development') {
+        console.log(...args);
+    }
 }
 
 export async function GET(request: Request) {
-    debugLog('API route called');
+    log('API route called');
     
     try {
         // Check for API key
         const apiKey = process.env.PROXYCURL_API_KEY;
-        if (!apiKey) {
-            debugLog('API key missing');
-            return NextResponse.json(
-                { error: 'API key not configured. Please set PROXYCURL_API_KEY environment variable.' },
-                { status: 500 }
-            );
-        }
-
-        // Get search parameters from request URL
-        const { searchParams } = new URL(request.url);
-        debugLog('Request params:', searchParams.toString());
-
-        // Add use_cache parameter
-        searchParams.append('use_cache', 'if-present');
+        log('API Key present:', !!apiKey);
         
-        const proxycurlUrl = API_ENDPOINT + '?' + searchParams.toString();
-        debugLog('Proxycurl URL:', proxycurlUrl);
-
-        // Make request to Proxycurl
-        debugLog('Making request to Proxycurl');
-        const response = await fetch(proxycurlUrl, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        // Log response details
-        debugLog('Response status:', response.status);
-        debugLog('Response headers:', Object.fromEntries(response.headers.entries()));
-
-        // Get response text
-        const responseText = await response.text();
-        debugLog('Raw response:', responseText);
-
-        if (!response.ok) {
-            debugLog('Error response:', response.status, responseText);
+        if (!apiKey) {
+            console.error('API key missing');
             return NextResponse.json(
-                { error: `Proxycurl API error: ${response.status} - ${responseText}` },
-                { status: response.status }
-            );
-        }
-
-        // Parse response
-        let data;
-        try {
-            data = JSON.parse(responseText);
-            debugLog('Parsed response:', data);
-        } catch (e) {
-            debugLog('Failed to parse response:', e);
-            return NextResponse.json(
-                { error: 'Invalid JSON response from Proxycurl API' },
+                { error: 'API key not configured' },
                 { status: 500 }
             );
         }
 
+        // Get and log search parameters
+        const { searchParams } = new URL(request.url);
+        const params = Object.fromEntries(searchParams.entries());
+        log('Search parameters:', params);
 
-        return NextResponse.json(data);
+        // Construct Proxycurl URL
+        const proxycurlUrl = API_ENDPOINT + '?' + searchParams.toString();
+        log('Proxycurl URL:', proxycurlUrl.replace(apiKey, '[REDACTED]'));
+
+        try {
+            // Make request to Proxycurl
+            log('Making request to Proxycurl');
+            const response = await fetch(proxycurlUrl, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                }
+            });
+
+            log('Proxycurl response status:', response.status);
+            log('Proxycurl response headers:', Object.fromEntries(response.headers.entries()));
+
+            const responseText = await response.text();
+            log('Proxycurl raw response:', responseText);
+
+            if (!response.ok) {
+                return NextResponse.json(
+                    { 
+                        error: `Proxycurl API error: ${response.status}`,
+                        details: responseText
+                    },
+                    { status: response.status }
+                );
+            }
+
+            // Try to parse the response
+            try {
+                const data = JSON.parse(responseText);
+                return NextResponse.json(data);
+            } catch (parseError) {
+                console.error('JSON parse error:', parseError);
+                return NextResponse.json(
+                    { 
+                        error: 'Failed to parse Proxycurl response',
+                        details: responseText
+                    },
+                    { status: 500 }
+                );
+            }
+        } catch (fetchError) {
+            console.error('Fetch error:', fetchError);
+            return NextResponse.json(
+                { 
+                    error: 'Failed to fetch from Proxycurl',
+                    details: fetchError instanceof Error ? fetchError.message : 'Unknown error'
+                },
+                { status: 500 }
+            );
+        }
     } catch (error) {
-        debugLog('Error in API route:', error);
+        console.error('Top-level error:', error);
         return NextResponse.json(
-            { error: error instanceof Error ? error.message : 'Internal server error' },
+            { 
+                error: 'Internal server error',
+                details: error instanceof Error ? error.message : 'Unknown error'
+            },
             { status: 500 }
         );
     }
