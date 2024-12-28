@@ -36,13 +36,32 @@ export async function updateSession(request: NextRequest) {
     return supabaseResponse
   }
 
+  // Handle root path
+  if (request.nextUrl.pathname === '/') {
+    const url = request.nextUrl.clone()
+    url.pathname = user ? '/dashboard' : '/auth/login'
+    return NextResponse.redirect(url)
+  }
+
+  // Check authentication for protected routes
   if (
     !user &&
-    !request.nextUrl.pathname.startsWith('/login') &&
-    !request.nextUrl.pathname.startsWith('/auth')
+    !request.nextUrl.pathname.startsWith('/auth') &&
+    !request.nextUrl.pathname.startsWith('/login')
   ) {
     const url = request.nextUrl.clone()
-    url.pathname = '/login'
+    url.pathname = '/auth/login'
+    return NextResponse.redirect(url)
+  }
+
+  // Redirect /login to /dashboard if user is already logged in
+  if (
+    user &&
+    (request.nextUrl.pathname.startsWith('/auth') ||
+      request.nextUrl.pathname.startsWith('/login'))
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 
